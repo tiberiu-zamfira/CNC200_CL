@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Istoric și Tradiție · Colegiul Național Carol I Craiova</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="global.css" />
+  <style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ─── CONTEXT BAR ─────────────────────────────────────────────── */
+
+
+
+
+
+
+
+
+
+
+/* ─── VARIABILE (inline fallback) ──────────────────────────────────────── */
+:root {
+  --navy:    #1a3254; --navy-dk: #0f1f35; --navy-md: #1e3a5f; --navy2: #0f1f35;
+  --gold:    #c9a44c; --gold-lt: #e2c47a; --gold-dk: #a07828; --gold2: #b8923e;
+  --gold-bg: #c9a962; --cream: #f5f0e8; --cream2: #ede8dc; --white: #ffffff;
+  --text: #1a1a1a; --muted: #666666; --site-max: 1100px; --site-pad: 60px;
+  --cat-art: #7b5ea7; --cat-sport: #2e7d5e; --cat-acad: #1a5276;
+  --cat-cultural: #b5400b; --cat-social: #6b6b00;
+}
+
+.hero{max-width:var(--site-max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;min-height:auto;height:600px;max-height:600px}
+
+    /* LEFT: cream, huge typographic year */
+    .hero-l{
+      background:var(--cream);
+      padding:var(--site-pad);
+      display:-webkit-box;display:-webkit-flex;display:flex;
+      -webkit-box-orient:vertical;-webkit-flex-direction:column;flex-direction:column;
+      -webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;
+      position:relative;overflow:hidden;
+    }
+    .hero-year-bg{
+      position:absolute;bottom:-40px;left:-20px;
+      font-family:'Playfair Display',serif;
+      font-size:clamp(180px,22vw,280px);font-weight:700;font-style:italic;
+      color:rgba(26,50,84,.07);line-height:1;
+      pointer-events:none;user-select:none;-webkit-user-select:none;
+      white-space:nowrap;
+    }
+    .hero-l-top{position:relative}
+    .hero-stamp{
+      display:inline-block;
+      border:1.5px solid var(--gold);
+      font-size:9px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;
+      color:var(--gold-dk);padding:5px 14px;margin-bottom:28px;
+    }
+    .hero-l h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(36px,5vw,58px);font-weight:700;
+      color:var(--navy);line-height:1.1;
+    }
+    .hero-l h1 em{font-style:italic;color:var(--gold-dk)}
+    .hero-l-bottom{
+      position:relative;
+      display:-webkit-box;display:-webkit-flex;display:flex;
+      -webkit-box-align:end;-webkit-align-items:flex-end;align-items:flex-end;
+      -webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;
+    }
+    .hero-tagline{font-size:13px;color:var(--muted);line-height:1.7;max-width:260px}
+    .hero-tagline strong{color:var(--navy);font-weight:700;display:block;font-size:15px;margin-bottom:4px}
+    .hero-scroll-hint{
+      font-size:9px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;
+      color:var(--gold-dk);
+      display:-webkit-box;display:-webkit-flex;display:flex;
+      -webkit-box-orient:vertical;-webkit-flex-direction:column;flex-direction:column;
+      -webkit-box-align:center;-webkit-align-items:center;align-items:center;gap:8px;
+    }
+    .hero-scroll-hint::after{content:'';width:1px;height:40px;background:var(--gold);opacity:.5}
+
+    /* RIGHT: dark, image + floating stats */
+    .hero-r{
+      background:var(--navy-dk);
+      position:relative;overflow:hidden;
+      display:-webkit-box;display:-webkit-flex;display:flex;
+      -webkit-box-align:end;-webkit-align-items:flex-end;align-items:flex-end;
+    }
+    .hero-img-fill{
+      position:absolute;inset:0;
+      background:-webkit-linear-gradient(160deg,#2a4a6e 0%,#0f1f35 60%);
+      background:linear-gradient(160deg,#2a4a6e 0%,#0f1f35 60%);
+      display:-webkit-box;display:-webkit-flex;display:flex;
+      -webkit-box-align:center;-webkit-align-items:center;align-items:center;
+      -webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;
+    }
+    .hero-img-lbl{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.25);text-align:center}
+    .hero-stats-float{
+      position:relative;z-index:2;width:100%;
+      display:grid;grid-template-columns:1fr 1fr 1fr;
+      border-top:1px solid rgba(201,164,76,.2);
+    }
+    .hsf-item{padding:22px 20px;border-right:1px solid rgba(201,164,76,.15);text-align:center}
+    .hsf-item:last-child{border-right:none}
+    .hsf-num{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--gold);display:block;line-height:1}
+    .hsf-lbl{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;margin-top:5px}
+
+    @-webkit-keyframes fadeIn{from{opacity:0;-webkit-transform:translateY(20px);transform:translateY(20px)}to{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+    .hero-l>*{-webkit-animation:fadeIn .7s ease both;animation:fadeIn .7s ease both}
+    .hero-l-top{-webkit-animation-delay:.1s;animation-delay:.1s}
+    .hero-l-bottom{-webkit-animation-delay:.25s;animation-delay:.25s}
+
+    /* ─── INTRO — newspaper pull quote ─── */
+    .intro{background:var(--white);padding:100px var(--site-pad)}
+    .intro-in{max-width:var(--site-max);margin:0 auto}
+    .intro-rule{display:grid;grid-template-columns:1fr 2px 2fr;gap:56px;align-items:start}
+    .intro-quote{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(22px,2.8vw,30px);font-weight:600;font-style:italic;
+      color:var(--navy);line-height:1.45;
+      position:sticky;top:100px;
+    }
+    .intro-quote::before{
+      content:'';display:block;width:36px;height:3px;background:var(--gold);margin-bottom:22px;
+    }
+    .intro-divider{background:var(--cream2);-webkit-align-self:stretch;align-self:stretch}
+    .intro-body p{font-size:15px;color:#444;line-height:1.9;margin-bottom:18px}
+    .intro-body p:last-child{margin-bottom:0}
+    .intro-body strong{color:var(--navy);font-weight:700}
+
+    /* ─── ERA CHAPTERS — full-bleed alternating ─── */
+    .era{
+      max-width:var(--site-max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;
+      min-height:520px;
+    }
+    .era.flip{direction:rtl}
+    .era.flip>*{direction:ltr}
+
+    .era-img{
+      position:relative;overflow:hidden;
+      display:-webkit-box;display:-webkit-flex;display:flex;
+      -webkit-box-align:center;-webkit-align-items:center;align-items:center;
+      -webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;
+    }
+    .era-img.sand{background:-webkit-linear-gradient(140deg,#c4b49a 0%,#9a8060 100%);background:linear-gradient(140deg,#c4b49a 0%,#9a8060 100%)}
+    .era-img.dusk{background:-webkit-linear-gradient(140deg,#2a3a50 0%,#0f1f35 100%);background:linear-gradient(140deg,#2a3a50 0%,#0f1f35 100%)}
+    .era-img.rust{background:-webkit-linear-gradient(140deg,#5a3020 0%,#2a1208 100%);background:linear-gradient(140deg,#5a3020 0%,#2a1208 100%)}
+    .era-img-lbl{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);text-align:center;padding:24px;position:relative;z-index:1}
+    /* gold corner mark */
+    .era-img::before{content:'';position:absolute;top:24px;right:24px;width:28px;height:28px;border-top:2px solid rgba(201,164,76,.4);border-right:2px solid rgba(201,164,76,.4)}
+    .era.flip .era-img::before{right:auto;left:24px;border-right:none;border-left:2px solid rgba(201,164,76,.4)}
+
+    .era-body{
+      display:-webkit-box;display:-webkit-flex;display:flex;
+      -webkit-box-orient:vertical;-webkit-flex-direction:column;flex-direction:column;
+      -webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;
+      padding:72px var(--site-pad);
+      position:relative;overflow:hidden;
+    }
+    .era-body.light{background:var(--cream)}
+    .era-body.dark{background:var(--navy)}
+    .era-num-bg{
+      position:absolute;right:-10px;bottom:-30px;
+      font-family:'Playfair Display',serif;font-size:clamp(120px,14vw,180px);
+      font-weight:700;font-style:italic;line-height:1;
+      pointer-events:none;user-select:none;-webkit-user-select:none;
+    }
+    .era-body.light .era-num-bg{color:rgba(26,50,84,.05)}
+    .era-body.dark  .era-num-bg{color:rgba(255,255,255,.04)}
+    .era.flip .era-num-bg{right:auto;left:-10px}
+    .era-badge{
+      display:inline-block;margin-bottom:14px;
+      font-size:9px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;
+      padding:3px 10px;border-radius:2px;
+    }
+    .era-body.light .era-badge{background:rgba(201,164,76,.15);color:var(--gold-dk)}
+    .era-body.dark  .era-badge{background:rgba(201,164,76,.12);color:var(--gold-lt)}
+    .era-year{
+      font-family:'Playfair Display',serif;font-size:clamp(48px,5vw,68px);
+      font-weight:700;line-height:1;margin-bottom:6px;display:block;
+    }
+    .era-body.light .era-year{color:var(--navy)}
+    .era-body.dark  .era-year{color:var(--gold)}
+    .era-rule{width:32px;height:2px;background:var(--gold);opacity:.6;margin:16px 0 20px}
+    .era-title{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.35;margin-bottom:16px;
+    }
+    .era-body.light .era-title{color:var(--navy)}
+    .era-body.dark  .era-title{color:var(--white)}
+    .era-text{font-size:14px;line-height:1.85}
+    .era-body.light .era-text{color:#444}
+    .era-body.dark  .era-text{color:rgba(255,255,255,.62)}
+    .era-text strong{font-weight:700}
+    .era-body.light .era-text strong{color:var(--navy)}
+    .era-body.dark  .era-text strong{color:var(--gold-lt)}
+    .era-text p+p{margin-top:14px}
+
+    /* ─── ACHIEVEMENTS — pure typographic ─── */
+    .ach{
+      background:var(--navy-dk);
+      padding:100px var(--site-pad);
+      text-align:center;position:relative;overflow:hidden;
+    }
+    .ach::before{
+      content:'52';position:absolute;top:50%;left:50%;
+      -webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);
+      font-family:'Playfair Display',serif;
+      font-size:clamp(280px,35vw,460px);font-weight:700;font-style:italic;
+      color:rgba(255,255,255,.025);pointer-events:none;user-select:none;-webkit-user-select:none;
+      white-space:nowrap;
+    }
+    .ach-in{max-width:var(--site-max);margin:0 auto;position:relative}
+    .ach-label{
+      font-size:10px;font-weight:800;letter-spacing:.35em;text-transform:uppercase;
+      color:var(--gold);display:block;margin-bottom:20px;
+    }
+    .ach-headline{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(28px,4vw,48px);font-weight:700;font-style:italic;
+      color:var(--white);line-height:1.25;margin-bottom:16px;
+    }
+    .ach-sub{font-size:14px;color:rgba(255,255,255,.45);max-width:520px;margin:0 auto 64px;line-height:1.8}
+    .ach-sub strong{color:var(--gold-lt);font-weight:700}
+    .medals{
+      display:-webkit-box;display:-webkit-flex;display:flex;
+      -webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;
+      gap:0;
+    }
+    .medal{
+      padding:32px 52px;
+      border-right:1px solid rgba(255,255,255,.07);
+    }
+    .medal:last-child{border-right:none}
+    .medal-icon{font-size:24px;display:block;margin-bottom:12px}
+    .medal-n{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(44px,6vw,72px);font-weight:700;
+      display:block;line-height:1;
+    }
+    .medal.gold   .medal-n{color:var(--gold)}
+    .medal.silver .medal-n{color:#c0c8d4}
+    .medal.bronze .medal-n{color:#c8956a}
+    .medal.total  .medal-n{color:var(--white);font-size:clamp(52px,7vw,88px)}
+    .medal-l{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;margin-top:8px}
+
+    /* ─── PATRIMONY — asymmetric bento ─── */
+    .pat{background:var(--cream);padding:100px var(--site-pad)}
+    .pat-in{max-width:var(--site-max);margin:0 auto}
+    .pat-hd{text-align:center;margin-bottom:56px}
+    .pat-hd-eyebrow{font-size:10px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dk);display:block;margin-bottom:12px}
+    .pat-hd h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:700;font-style:italic;color:var(--navy)}
+
+    /* bento grid: big left + 2 right stacked */
+    .bento{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-bottom:16px}
+    .bento-sm{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+
+    .bc{border-radius:8px;overflow:hidden;background:var(--white);
+      -webkit-transition:-webkit-transform .3s,-webkit-box-shadow .3s;
+      transition:transform .3s,box-shadow .3s;cursor:default}
+    .bc:hover{-webkit-transform:translateY(-4px);transform:translateY(-4px);
+      -webkit-box-shadow:0 16px 48px rgba(26,50,84,.12);box-shadow:0 16px 48px rgba(26,50,84,.12)}
+    .bc-img{
+      display:-webkit-box;display:-webkit-flex;display:flex;
+      -webkit-box-align:center;-webkit-align-items:center;align-items:center;
+      -webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;
+      position:relative;overflow:hidden;
+    }
+    .bc.big .bc-img{aspect-ratio:4/3}
+    .bc.tall .bc-img{aspect-ratio:4/3}
+    .bc.sm  .bc-img{aspect-ratio:16/9}
+    .bc-img.navy{background:-webkit-linear-gradient(135deg,#1a3254,#0f1f35);background:linear-gradient(135deg,#1a3254,#0f1f35)}
+    .bc-img.green{background:-webkit-linear-gradient(135deg,#1e3d20,#0d1f0f);background:linear-gradient(135deg,#1e3d20,#0d1f0f)}
+    .bc-img.violet{background:-webkit-linear-gradient(135deg,#2e1650,#150930);background:linear-gradient(135deg,#2e1650,#150930)}
+    .bc-img.copper{background:-webkit-linear-gradient(135deg,#3d1e08,#1a0d03);background:linear-gradient(135deg,#3d1e08,#1a0d03)}
+    .bc-img-lbl{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.28);text-align:center;padding:16px;position:relative;z-index:1}
+    .bc-body{padding:24px 26px 28px}
+    .bc.big .bc-body{padding:28px 30px 34px}
+    .bc-tag{font-size:9px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dk);background:rgba(201,164,76,.12);padding:3px 9px;border-radius:2px;display:inline-block;margin-bottom:10px}
+    .bc-body h3{font-family:'Playfair Display',serif;color:var(--navy);line-height:1.35;margin-bottom:10px}
+    .bc.big .bc-body h3{font-size:22px;font-weight:700}
+    .bc.tall .bc-body h3{font-size:18px;font-weight:600}
+    .bc.sm  .bc-body h3{font-size:16px;font-weight:600}
+    .bc-body p{font-size:13px;color:#555;line-height:1.75}
+    .bc-body p strong{color:var(--navy);font-weight:700}
+    .bc-stat{margin-top:16px;padding-top:14px;border-top:1px solid var(--cream2);display:-webkit-box;display:-webkit-flex;display:flex;gap:20px}
+    .bc-sn{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--gold);display:block;line-height:1}
+    .bc-sl{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;margin-top:3px}
+
+    /* ─── WORLD — countries as bold strips ─── */
+    .world{background:var(--navy-dk);padding:100px var(--site-pad)}
+    .world-in{max-width:var(--site-max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;-webkit-box-align:center;-webkit-align-items:center;align-items:center}
+    .world-text .eyebrow{font-size:10px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:16px}
+    .world-text h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,40px);font-weight:700;font-style:italic;color:var(--white);line-height:1.3;margin-bottom:20px}
+    .world-text p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.85}
+    .world-text p strong{color:var(--gold-lt);font-weight:700}
+    .country-list{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-flex-direction:column;flex-direction:column;gap:0}
+    .country-row{
+      display:-webkit-box;display:-webkit-flex;display:flex;
+      -webkit-box-align:center;-webkit-align-items:center;align-items:center;
+      padding:18px 0;border-bottom:1px solid rgba(255,255,255,.06);gap:18px;
+      -webkit-transition:padding-left .2s;transition:padding-left .2s;
+    }
+    .country-row:hover{padding-left:8px}
+    .country-row:first-child{border-top:1px solid rgba(255,255,255,.06)}
+    .c-flag{font-size:22px;-webkit-flex-shrink:0;flex-shrink:0}
+    .c-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;font-style:italic;color:var(--white);-webkit-box-flex:1;-webkit-flex:1;flex:1}
+    .c-arrow{font-size:18px;color:rgba(201,164,76,.4)}
+
+    /* ─── CTA ─── */
+    .cta{background:var(--cream);padding:90px var(--site-pad)}
+    .cta-in{max-width:var(--site-max);margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:64px;-webkit-box-align:center;-webkit-align-items:center;align-items:center}
+    .cta-text h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,40px);font-weight:700;font-style:italic;color:var(--navy);line-height:1.3;margin-bottom:16px}
+    .cta-text h2 em{color:var(--gold-dk)}
+    .cta-text p{font-size:14px;color:var(--muted);line-height:1.8}
+    .cta-action{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-flex-direction:column;flex-direction:column;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start;gap:16px}
+    .cta-btn{display:inline-block;background:var(--navy);color:var(--white);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:16px 44px;border-radius:2px;-webkit-transition:background .2s;transition:background .2s}
+    .cta-btn:hover{background:var(--gold-dk)}
+    .cta-btn.outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+    .cta-btn.outline:hover{background:var(--navy);color:var(--white)}
+
+    /* ─── RESPONSIVE ─── */
+    
+
+    /* ── Tablet ≤ 1000px ── */
+    @media (max-width: 1000px) {
+      .hero { grid-template-columns: 1fr; height: auto; max-height: none; }
+      .hero-r { height: 300px; }
+      .hero-stats-float { bottom: auto; right: auto; position: relative; margin-top: 20px; }
+      .intro-rule { grid-template-columns: 1fr; gap: 28px; }
+      .intro-rule > *:nth-child(2) { display: none; }
+      .era { grid-template-columns: 1fr; min-height: auto; }
+      .era.flip { direction: ltr; }
+      .era-img { min-height: 280px; }
+      .era-body { padding: 48px var(--site-pad); }
+      .world-in { grid-template-columns: 1fr; gap: 40px; }
+      .medals { flex-wrap: wrap; justify-content: center; }
+      .medal { min-width: 120px; flex: 0 0 auto; }
+      .pers-cols { grid-template-columns: repeat(2, 1fr); }
+      .bento { grid-template-columns: 1fr; }
+      .bento-sm { grid-template-columns: 1fr 1fr; }
+      .cta-in { grid-template-columns: 1fr; gap: 32px; }
+      .pers { padding: 60px var(--site-pad); }
+    }
+    /* ── Mobile ≤ 750px ── */
+    @media (max-width: 750px) {
+      .hero { padding: 0; }
+      .hero-l { padding: 32px 20px; }
+      .hero-l h1 { font-size: clamp(22px, 5.5vw, 32px); }
+      .hero-r { height: 200px; }
+      .hero-year-bg { font-size: 80px; }
+      .hero-stats-float { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .intro-rule { gap: 16px; }
+      .intro { padding: 40px 20px; }
+      .intro-quote { font-size: 20px; position: static; }
+      .era-img { min-height: 200px; }
+      .era-body { padding: 32px 20px; }
+      .world { padding: 48px 20px; }
+      .world-in { gap: 28px; }
+      .ach { padding: 48px 20px; }
+      .medals { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+      .medal { width: calc(50% - 1px); border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 24px 16px; }
+      .medal:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.07); }
+      .medal:nth-last-child(-n+2) { border-bottom: none; }
+      .pers-cols { grid-template-columns: 1fr 1fr; column-gap: 16px; }
+      .pers-hdr { margin-bottom: 28px; }
+      .pat { padding: 48px 20px; }
+      .bento-sm { grid-template-columns: 1fr; }
+      .cta { padding: 48px 20px; }
+      .cta-in { gap: 24px; }
+    }
+
+/* ─── PERSONALITATI ──────────────────────────────────────────────────────── */
+.pers {
+  background: var(--cream);
+  padding: 80px var(--site-pad) 40px;
+}
+.pers-in {
+  max-width: var(--site-max);
+  margin: 0 auto;
+}
+
+/* Header */
+.pers-hdr {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.pers-overline {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--gold-dk);
+  margin-bottom: 16px;
+}
+.pers-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.pers-title em { font-style: italic; color: var(--gold-dk); }
+.pers-sub {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(16px, 2vw, 20px);
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.85;
+}
+
+/* Three-column register */
+.pers-cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 32px;
+  row-gap: 0;
+  border-top: 1px solid rgba(26,50,84,.15);
+  margin-bottom: 0;
+}
+.pers-entry {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(26,50,84,.08);
+}
+.pe-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 3px;
+}
+.pe-dot { display: none; }
+.pe-role {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold-dk);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+
+/* Responsive */
+
+
+ 
+    /* ── Mobile burger ── */
+    .nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;border-radius:4px;transition:background .15s;flex-shrink:0}
+    .nav-burger:hover{background:var(--cream)}
+    .nav-burger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:transform .25s,opacity .25s,width .25s;transform-origin:center}
+    .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-burger.open span:nth-child(2){opacity:0;width:0}
+    .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;z-index:199;overflow-y:auto;background:var(--white);border-top:3px solid var(--gold);padding:16px 0 40px;transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1)}
+    .mobile-menu.open{transform:translateX(0)}
+    .mobile-menu-inner{max-width:var(--site-max);margin:0 auto;padding:0 var(--site-pad)}
+    .mobile-menu ul{list-style:none;margin:0;padding:0}
+    .mobile-menu>.mobile-menu-inner>ul>li>a{display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:15px;font-weight:700;color:var(--navy);text-decoration:none;border-bottom:1px solid rgba(26,50,84,.08);letter-spacing:.02em}
+    .mobile-menu>.mobile-menu-inner>ul>li>a:hover{color:var(--gold)}
+    .mm-caret{font-size:10px;opacity:.5;transition:transform .2s}
+    .mm-has-sub.open .mm-caret{transform:rotate(180deg)}
+    .mm-sub{display:none;padding:4px 0 8px 16px;border-left:2px solid var(--gold);margin:0 0 8px}
+    .mm-has-sub.open .mm-sub{display:block}
+    .mm-sub li a{display:block;padding:9px 0;font-size:13px;font-weight:500;color:var(--navy);text-decoration:none;border-bottom:1px solid rgba(26,50,84,.05)}
+    .mm-sub li a:hover{color:var(--gold)}
+    .mm-sub .dd-bicentenar a{color:var(--gold)!important;font-weight:700;letter-spacing:.03em}
+    @media(max-width:860px){.navbar-nav{display:none}.nav-burger{display:flex}.mobile-menu{display:block}}
+
+  </style>
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-inner">
+  <a href="index.html" class="navbar-logo-img" id="logoWrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216.86 34.36" height="31" width="auto" style="display:block;" id="logoSvg">
+  <defs>
+    <!--
+      Simple navy→gold→navy gradient in userSpaceOnUse.
+      The entire gradient vector is positioned so the gold center
+      sits at the cursor position. JS just updates x1/y1/x2/y2.
+      Band half-width ~35 viewBox units at 35deg diagonal.
+    -->
+    <radialGradient id="logo-shimmer" gradientUnits="userSpaceOnUse"
+      cx="-200" cy="200" r="60" fx="-200" fy="200">
+      <stop id="gc" offset="0%"   stop-color="#0f385a"/>
+      <stop id="gb" offset="25%"  stop-color="#0f385a"/>
+      <stop id="ga" offset="55%"  stop-color="#0f385a"/>
+      <stop offset="100%" stop-color="#0f385a"/>
+    </radialGradient>
+  </defs>
+  <g id="Layer_2-2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <path fill="url(#logo-shimmer)" d="M0,8.07C0,3.49,2.85,0,7.4,0c3.8,0,6.04,2.26,6.36,5.2h-3.11c-.28-1.55-1.44-2.57-3.26-2.57-2.85,0-4.21,2.37-4.21,5.43s1.64,5.41,4.23,5.41c1.83,0,3.13-1.1,3.32-2.72h3.06c-.09,1.36-.67,2.67-1.7,3.64-1.06.99-2.54,1.64-4.68,1.64-4.33,0-7.42-3.34-7.42-7.98Z"/>
+        <path fill="url(#logo-shimmer)" d="M15.18,8.04c0-4.62,2.89-8.04,7.44-8.04s7.42,3.43,7.42,8.04-2.87,8.02-7.42,8.02-7.44-3.41-7.44-8.02ZM26.85,8.04c0-3.08-1.38-5.48-4.21-5.48s-4.27,2.39-4.27,5.48,1.44,5.46,4.27,5.46,4.21-2.39,4.21-5.46Z"/>
+        <path fill="url(#logo-shimmer)" d="M32.18.3h3.13v12.81h7.25v2.61h-10.37V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M44.66.3h11.34v2.63h-8.22v3.45h7.2v2.57h-7.2v4.16h8.28v2.61h-11.41V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M69.31,13.65h-.04c-1.06,1.77-2.5,2.39-4.33,2.39-2.33,0-4.14-.84-5.41-2.24-1.27-1.42-2.01-3.41-2.01-5.74,0-2.57.91-4.81,2.52-6.3,1.25-1.14,2.89-1.77,4.96-1.77,3.88,0,6.1,2.14,6.6,5.15h-3.06c-.35-1.49-1.49-2.57-3.47-2.57-2.91,0-4.36,2.42-4.36,5.48s1.66,5.46,4.31,5.46c2.39,0,3.97-1.79,3.97-3.49v-.09h-3.71v-2.42h6.49v8.2h-2.35l-.11-2.07Z"/>
+        <path fill="url(#logo-shimmer)" d="M74.4.3h3.13v15.42h-3.13V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M80.22,10.76V.3h3.13v10.46c0,1.6.8,2.72,2.89,2.72,1.98,0,2.91-1.16,2.91-2.76V.3h3.13v10.46c0,3.3-2.03,5.22-5.97,5.22s-6.08-1.88-6.08-5.22Z"/>
+        <path fill="url(#logo-shimmer)" d="M94.95.3h3.13v12.81h7.25v2.61h-10.37V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M111.49.3h3.17l5.13,8.61c.5.84,1.08,2.16,1.08,2.16h.04s-.09-1.6-.09-2.67V.3h3.08v15.42h-3.02l-5.26-8.52c-.5-.82-1.1-2.14-1.1-2.14h-.04s.09,1.62.09,2.7v7.96h-3.08V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M130.97.3h3.24l5.43,15.42h-3.26l-1.04-3.28h-5.56l-1.01,3.28h-3.17l5.37-15.42ZM130.52,10.05h4.08l-1.38-4.44c-.26-.82-.63-2.37-.63-2.37h-.04s-.39,1.55-.65,2.37l-1.38,4.44Z"/>
+        <path fill="url(#logo-shimmer)" d="M139.92.3h12.4v2.63h-4.64v12.79h-3.13V2.93h-4.64V.3ZM144.75,20.45c.63-.15,1.34-.52,1.34-1.38h-1.29v-2.31h2.67v2.09c0,1.66-1.32,2.39-2.72,2.54v-.95Z"/>
+        <path fill="url(#logo-shimmer)" d="M154.34.3h3.13v15.42h-3.13V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M159.63,8.04c0-4.62,2.89-8.04,7.44-8.04s7.42,3.43,7.42,8.04-2.87,8.02-7.42,8.02-7.44-3.41-7.44-8.02ZM171.3,8.04c0-3.08-1.38-5.48-4.21-5.48s-4.27,2.39-4.27,5.48,1.44,5.46,4.27,5.46,4.21-2.39,4.21-5.46Z"/>
+        <path fill="url(#logo-shimmer)" d="M176.62.3h3.17l5.13,8.61c.5.84,1.08,2.16,1.08,2.16h.04s-.09-1.6-.09-2.67V.3h3.08v15.42h-3.02l-5.26-8.52c-.5-.82-1.1-2.14-1.1-2.14h-.04s.09,1.62.09,2.7v7.96h-3.08V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M196.1.3h3.24l5.43,15.42h-3.26l-1.04-3.28h-5.56l-1.01,3.28h-3.17l5.37-15.42ZM195.64,10.05h4.08l-1.38-4.44c-.26-.82-.63-2.37-.63-2.37h-.04s-.39,1.55-.65,2.37l-1.38,4.44Z"/>
+        <path fill="url(#logo-shimmer)" d="M206.49.3h3.13v12.81h7.25v2.61h-10.37V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M8.93,34.31C3.77,34.31.24,31.27.24,26.18s3.97-8.17,8.52-8.17c1.92,0,3.58.47,4.83,1.47l.54-1.49h1.92v6.36h-2.14c-.24-2.76-2.03-4.4-4.51-4.4-3.11,0-5.07,2.33-5.07,6.23s1.83,6.19,5.07,6.19c2.7,0,4.51-1.4,4.51-4.38h2.33c.04,4.1-3.02,6.32-7.31,6.32Z"/>
+        <path fill="url(#logo-shimmer)" d="M16.91,33.88v-1.57c1.75-.06,2.01.06,3.45-3.54l4.12-10.29h3.43l4.1,10.5c1.08,2.78,1.34,3.23,3.28,3.32v1.57h-8.63v-1.57c2.14-.13,1.88-.52,1.1-2.91h-5.31c-.86,2.39-.75,2.78,1.4,2.91v1.57h-6.94ZM27.19,27.67l-1.92-5.97-2.2,5.97h4.12Z"/>
+        <path fill="url(#logo-shimmer)" d="M36.25,33.88v-1.57c2.35-.06,2.42-.17,2.42-3.32v-5.18c0-3.56-.06-3.73-2.42-3.77v-1.55h8.32c4.49,0,6.77.69,6.77,3.88,0,2.65-1.92,3.84-4.96,4.05v.11c1.01.19,2.03.6,2.76,1.42,1.25,1.4,1.19,4.14,2.31,4.14.58,0,.78-.56.78-1.4v-.82h1.23v.99c0,2.16-1.23,3.45-3.56,3.45-1.55,0-2.39-.43-2.87-1.08-1.47-2.09.71-6.38-4.44-6.53v2.29c0,3.15.06,3.26,2.42,3.32v1.57h-8.76ZM42.59,24.91h1.57c2.07,0,3.15-.71,3.15-2.31,0-1.75-1.08-2.31-3.15-2.31h-1.57v4.62Z"/>
+        <path fill="url(#logo-shimmer)" d="M63.53,34.36c-4.74,0-8.73-3.13-8.73-8.17s3.99-8.17,8.73-8.17,8.86,3.11,8.86,8.17-4.03,8.17-8.86,8.17ZM63.6,32.42c2.98,0,4.7-2.26,4.7-6.23s-1.73-6.23-4.7-6.23-4.7,2.29-4.7,6.23,1.73,6.23,4.7,6.23Z"/>
+        <path fill="url(#logo-shimmer)" d="M73.91,33.88v-1.57c2.29-.06,2.42-.13,2.42-3.32v-4.74c0-4.16-.06-4.12-2.42-4.21v-1.55h8.99v1.55c-2.39.09-2.65.04-2.65,4.21v4.7c0,2.42.39,3.13,3.36,3.13h.32c2.67,0,3.69-1.81,4.27-4.66h1.79l-.45,6.47h-15.64Z"/>
+        <path fill="url(#logo-shimmer)" d="M99.44,31.14c1.94,0,2.61-.19,3.17-2.05l1.7-5.56c.67-2.18.11-2.31-1.83-2.31h-.82l.84-2.74h7.44l-.84,2.74h-.78c-1.94,0-2.63.15-3.28,2.31l-1.68,5.54c-.52,1.73-.04,2.07,1.51,2.07h1.21l-.84,2.74h-7.44l.84-2.74h.8Z"/>
+        <path fill="url(#logo-shimmer)" d="M115.72,26.23c0-4.57,2.85-8.07,7.4-8.07,3.8,0,6.04,2.26,6.36,5.2h-3.11c-.28-1.55-1.44-2.57-3.26-2.57-2.85,0-4.21,2.37-4.21,5.43s1.64,5.41,4.23,5.41c1.83,0,3.13-1.1,3.32-2.72h3.06c-.09,1.36-.67,2.67-1.7,3.64-1.06.99-2.54,1.64-4.68,1.64-4.33,0-7.42-3.34-7.42-7.98Z"/>
+        <path fill="url(#logo-shimmer)" d="M131.14,18.46h7.07c2.98,0,4.96,1.73,4.96,4.29,0,1.81-.84,3.19-2.83,3.73v.06c1.42.41,2.16,1.23,2.35,3.11.22,2.18.13,3.84.67,4.08v.15h-3c-.39-.17-.43-1.9-.56-3.56-.13-1.68-1.08-2.63-3.02-2.63h-2.52v6.19h-3.13v-15.42ZM134.27,25.28h3.32c1.7,0,2.54-.88,2.54-2.11s-.8-2.18-2.46-2.18h-3.41v4.29Z"/>
+        <path fill="url(#logo-shimmer)" d="M149.54,18.46h3.24l5.43,15.42h-3.26l-1.04-3.28h-5.56l-1.01,3.28h-3.17l5.37-15.42ZM149.08,28.21h4.08l-1.38-4.44c-.26-.82-.63-2.37-.63-2.37h-.04s-.39,1.55-.65,2.37l-1.38,4.44Z"/>
+        <path fill="url(#logo-shimmer)" d="M159.52,18.46h3.13v15.42h-3.13v-15.42Z"/>
+        <path fill="url(#logo-shimmer)" d="M164.37,26.21c0-4.62,2.89-8.04,7.44-8.04s7.42,3.43,7.42,8.04-2.87,8.02-7.42,8.02-7.44-3.41-7.44-8.02ZM176.04,26.21c0-3.08-1.38-5.48-4.21-5.48s-4.27,2.39-4.27,5.48,1.44,5.46,4.27,5.46,4.21-2.39,4.21-5.46Z"/>
+        <path fill="url(#logo-shimmer)" d="M179.04,18.46h3.28l2.72,8.93c.3,1.01.67,2.46.67,2.46h.04s.37-1.47.67-2.46l2.7-8.93h3.17l-5.2,15.42h-2.85l-5.2-15.42Z"/>
+        <path fill="url(#logo-shimmer)" d="M196.14,18.46h3.24l5.43,15.42h-3.26l-1.04-3.28h-5.56l-1.01,3.28h-3.17l5.37-15.42ZM195.69,28.21h4.08l-1.38-4.44c-.26-.82-.63-2.37-.63-2.37h-.04s-.39,1.55-.65,2.37l-1.38,4.44Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
+</a>
+  <button class="nav-burger" id="navBurger" aria-label="Meniu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="navbar-nav">
+        <li><a href="index.html">Acasă</a></li>
+    <li class="has-dropdown">
+      <a href="despre-istoric.html" tabindex="0" style="color:var(--gold)">Colegiu <span class="dd-caret">▾</span></a>
+      <ul class="dropdown">
+      <li class="dd-bicentenar"><a href="program-bicentenar.html">✦ Bicentenar 1826–2026</a></li>
+      <li><a href="conducere.html">Echipa de conducere</a></li>
+      <li><a href="consiliu-administratie.html">Consiliul de administrație</a></li>
+      <li><a href="consiliu-profesoral.html">Consiliul profesoral</a></li>
+      <li><a href="comisii.html">Comisii</a></li>
+      <li><a href="consiliu-elevi.html">Consiliul elevilor</a></li>
+      <li><a href="interes-public.html">Informații de interes public</a></li>
+      <li><a href="regulamente.html">Legislații și regulamente</a></li>
+      </ul>
+    </li>
+        <li class="has-dropdown">
+      <a href="admitere-examene.html" tabindex="0">Admitere și examene <span class="dd-caret">▾</span></a>
+      <ul class="dropdown">
+      <li><a href="inscrieri-primar.html">Înscrieri învățământ primar 2026-2027</a></li>
+      <li><a href="clasa-v.html">Clasa a V-a</a></li>
+      <li><a href="clasa-ix.html">Clasa a IX-a</a></li>
+      <li><a href="evaluare-ii-iv-vi.html">Evaluare II, IV, VI</a></li>
+      <li><a href="evaluare-nationala.html">Evaluare națională</a></li>
+      <li><a href="bacalaureat.html">Bacalaureat</a></li>
+      <li><a href="examene-internationale.html">Examene internaționale</a></li>
+      <li><a href="bacalaureat-francofon.html">Bacalaureat francofon</a></li>
+      <li><a href="transferuri.html">Transferuri</a></li>
+      </ul>
+    </li>
+        <li class="has-mega">
+      <a href="activitati-dotari.html" tabindex="0">Activități și Dotări <span class="dd-caret">▾</span></a>
+      <div class="mega-menu">
+        <div class="mega-inner">
+          <div class="mega-col">
+            <div class="mega-col-title">Activități</div>
+      <a href="proiecte-educationale.html">Proiecte educaționale</a>
+      <a href="scoala-altfel.html">Școala Altfel</a>
+      <a href="concursuri-scolare.html">Concursuri școlare</a>
+      <a href="cluburi-asociatii.html">Cluburi și Asociații</a>
+      <a href="publicatii.html">Publicații</a>
+          </div>
+          <div class="mega-col">
+            <div class="mega-col-title">Dotări</div>
+      <a href="bazin-semiolimpic.html">Bazin Semiolimpic</a>
+      <a href="biblioteca-mihail-strajan.html">Biblioteca Mihail Strajan</a>
+      <a href="cabinete-specializate.html">Cabinete specializate</a>
+      <a href="muzeul-colegiului.html">Muzeul Colegiului</a>
+      <a href="baza-sportiva.html">Bază sportivă</a>
+      <a href="sala-festivitati.html">Sală festivități</a>
+      <a href="colectii-inedite.html">Colecții inedite</a>
+          </div>
+        </div>
+      </div>
+    </li>
+        <li><a href="stiri.html">Știri</a></li>
+        <li><a href="secretariat.html">Secretariat</a></li>
+  </ul>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-inner">
+    <ul>
+      <li><a href="index.html">Acasă</a></li>
+      <li class="mm-has-sub">
+        <a href="despre-istoric.html" tabindex="0">Colegiu <span class="mm-caret">▾</span></a>
+        <ul class="mm-sub">
+          <li class="dd-bicentenar"><a href="program-bicentenar.html">✦ Bicentenar 1826–2026</a></li>
+          <li><a href="conducere.html">Echipa de conducere</a></li>
+          <li><a href="consiliu-administratie.html">Consiliul de administrație</a></li>
+          <li><a href="consiliu-profesoral.html">Consiliul profesoral</a></li>
+          <li><a href="comisii.html">Comisii</a></li>
+          <li><a href="consiliu-elevi.html">Consiliul elevilor</a></li>
+          <li><a href="interes-public.html">Informații de interes public</a></li>
+          <li><a href="regulamente.html">Legislații și regulamente</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+      <a href="admitere-examene.html" tabindex="0">Admitere și examene <span class="dd-caret">▾</span></a>
+      <ul class="dropdown">
+      <li><a href="inscrieri-primar.html">Înscrieri învățământ primar 2026-2027</a></li>
+      <li><a href="clasa-v.html">Clasa a V-a</a></li>
+      <li><a href="clasa-ix.html">Clasa a IX-a</a></li>
+      <li><a href="evaluare-ii-iv-vi.html">Evaluare II, IV, VI</a></li>
+      <li><a href="evaluare-nationala.html">Evaluare națională</a></li>
+      <li><a href="bacalaureat.html">Bacalaureat</a></li>
+      <li><a href="examene-internationale.html">Examene internaționale</a></li>
+      <li><a href="bacalaureat-francofon.html">Bacalaureat francofon</a></li>
+      <li><a href="transferuri.html">Transferuri</a></li>
+      </ul>
+    </li>
+            <li class="mm-has-sub">
+        <a href="activitati-dotari.html" tabindex="0">Activități și Dotări <span class="mm-caret">▾</span></a>
+        <ul class="mm-sub">
+          <li><div class="mm-mega-title">Activități</div></li>
+          <li><a href="proiecte-educationale.html">Proiecte educaționale</a></li>
+          <li><a href="scoala-altfel.html">Școala Altfel</a></li>
+          <li><a href="concursuri-scolare.html">Concursuri școlare</a></li>
+          <li><a href="cluburi-asociatii.html">Cluburi și Asociații</a></li>
+          <li><a href="publicatii.html">Publicații</a></li>
+          <li><div class="mm-mega-title">Dotări</div></li>
+          <li><a href="bazin-semiolimpic.html">Bazin Semiolimpic</a></li>
+          <li><a href="biblioteca-mihail-strajan.html">Biblioteca Mihail Strajan</a></li>
+          <li><a href="cabinete-specializate.html">Cabinete specializate</a></li>
+          <li><a href="muzeul-colegiului.html">Muzeul Colegiului</a></li>
+          <li><a href="baza-sportiva.html">Bază sportivă</a></li>
+          <li><a href="sala-festivitati.html">Sală festivități</a></li>
+          <li><a href="colectii-inedite.html">Colecții inedite</a></li>
+        </ul>
+      </li>
+      <li><a href="stiri.html">Știri</a></li>
+      <li><a href="secretariat.html">Secretariat</a></li>
+    </ul>
+  </div>
+</div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-l">
+    <div class="hero-year-bg">1826</div>
+    <div class="hero-l-top">
+      <span class="hero-stamp">Despre noi · Istoric și Tradiție</span>
+      <h1>O instituție<br>care a scris<br><em>istoria</em></h1>
+    </div>
+    <div class="hero-l-bottom">
+      <div class="hero-tagline">
+        <strong>Colegiul Național Carol I</strong>
+        A doua școală medie din Principate.<br>Fondată în 1826, activă astăzi.
+      </div>
+      <div class="hero-scroll-hint">scroll</div>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="hero-img-fill">
+      <span class="hero-img-lbl">Clădirea istorică<br>a Colegiului Național Carol I<br>Craiova</span>
+    </div>
+    <div class="hero-stats-float">
+      <div class="hsf-item">
+        <span class="hsf-num">1826</span>
+        <span class="hsf-lbl">An fondare</span>
+      </div>
+      <div class="hsf-item">
+        <span class="hsf-num">200</span>
+        <span class="hsf-lbl">Ani tradiție</span>
+      </div>
+      <div class="hsf-item">
+        <span class="hsf-num">2000+</span>
+        <span class="hsf-lbl">Elevi / zi</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro reveal">
+  <div class="intro-in">
+    <div class="intro-rule">
+      <blockquote class="intro-quote">
+        „O catedră a culturii, ce iese din tiparele obișnuite ale unei simple instituții de învățământ."
+      </blockquote>
+      <div class="intro-divider"></div>
+      <div class="intro-body">
+        <p>Una dintre instituțiile de prestigiu ale învățământului românesc, Colegiul Național „Carol I" din Craiova, își deschide zilnic porțile pentru mai mult de <strong>2000 de elevi</strong>.</p>
+        <p>Istoria acestei școli doljene începe cu 186 de ani în urmă, în 1826, când doi foști elevi ai lui Gheorghe Lazăr și Ion Heliade Rădulescu — profesorul <strong>Stanciu Căpătâneanu</strong> și învățătorul <strong>Grigore Pleșoianu</strong> — au pus bazele Școlii Naționale Medii, a doua școală medie din Principate, după Colegiul „Sfântul Sava" din București.</p>
+        <p>Pe lângă valorile umane cultivate de spiritul colegiului, se remarcă interesul de a înnobila acest spațiu și prin valorile materiale — picturi, piese de mobilier, colecții rare de fluturi și de roci, valori de patrimoniu ce întregesc unicitatea acestei catedrale a culturii.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ERA 1 — 1826 -->
+<section class="era reveal">
+  <div class="era-img sand">
+    <span class="era-img-lbl">Mănăstirea Obedeanu<br>Primul sediu, 1826</span>
+  </div>
+  <div class="era-body light">
+    <div class="era-num-bg">1826</div>
+    <span class="era-badge">Fondare</span>
+    <span class="era-year">1826</span>
+    <div class="era-rule"></div>
+    <p class="era-title">Nașterea celei de-a doua școli medii din Principate</p>
+    <div class="era-text">
+      <p>La început, Școala Centrală funcționează în chiliile de la Mănăstirea Obedeanu, apoi la Biserica Madona Dudu. În octombrie <strong>1832</strong> se cumpără actualul teren din centrul Craiovei cu <strong>300 de galbeni</strong> donați de vornicul Iordache Otetelișanu.</p>
+      <p>Abia în <strong>1842</strong> se inaugurează primul local, imortalizat de pictorul Theodor Aman în tabloul <em>„Hora Unirii la Craiova"</em>. În sala mare, Ion Heliade Rădulescu a citit Proclamația de la Islaz.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ERA 2 — 1848 -->
+<section class="era flip reveal">
+  <div class="era-img dusk">
+    <span class="era-img-lbl">Revoluția de la 1848<br>Sala mare a școlii</span>
+  </div>
+  <div class="era-body dark">
+    <div class="era-num-bg">1848</div>
+    <span class="era-badge">Revoluție</span>
+    <span class="era-year">1848</span>
+    <div class="era-rule"></div>
+    <p class="era-title">Ani de rezistență și de greutăți</p>
+    <div class="era-text">
+      <p>După înfrângerea Revoluției, timp de <strong>trei ani</strong>, școala se închide — turcii transformă clădirea în cazarmă. În 1853 devine comandament țarist și spital.</p>
+      <p><strong>G. M. Fontanin</strong> protestează, este arestat și alungat, dar în <strong>1854 redeschide școala</strong> pe care o va conduce cu autoritate și competență încă douăzeci și șapte de ani.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ERA 3 — 1885 -->
+<section class="era reveal">
+  <div class="era-img rust">
+    <span class="era-img-lbl">Clădirea actuală, 1893–1895<br>Frescele lui Francisc Tribalski</span>
+  </div>
+  <div class="era-body light">
+    <div class="era-num-bg">1885</div>
+    <span class="era-badge">Decret Regal · 1885</span>
+    <span class="era-year">1885–1997</span>
+    <div class="era-rule"></div>
+    <p class="era-title">De la Liceul „Carol I" la Colegiul Național</p>
+    <div class="era-text">
+      <p>Prin înalt Decret Regal, școala primește numele <strong>Liceul „Carol I"</strong>. Între 1893–1895 se construiește actuala clădire, costând peste un milion de lei. Regele a așezat personal un cilindru metalic cu documentul ctitoriei în fundație.</p>
+      <p>Pictorul <strong>Francisc Tribalski</strong> realizează frescele din bibliotecă și sala rotundă. În 1948, liceul primește numele „Nicolae Bălcescu", dar în <strong>1997 revine la vechiul și binemeritatul său nume „Carol I"</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="ach reveal">
+  <div class="ach-in">
+    <span class="ach-label">Performanță internațională</span>
+    <h2 class="ach-headline">Consacrați la nivel mondial</h2>
+    <p class="ach-sub">Elevii, îndrumați de profesori de excepție, au adus școlii lor, dar și României, <strong>52 de premii internaționale</strong> — dintre care 17 medalii de aur, 22 de argint și 13 de bronz.</p>
+    <div class="medals">
+      <div class="medal total">
+        <span class="medal-icon">🏆</span>
+        <span class="medal-n">52</span>
+        <span class="medal-l">Premii totale</span>
+      </div>
+      <div class="medal gold">
+        <span class="medal-icon">🥇</span>
+        <span class="medal-n">17</span>
+        <span class="medal-l">Aur</span>
+      </div>
+      <div class="medal silver">
+        <span class="medal-icon">🥈</span>
+        <span class="medal-n">22</span>
+        <span class="medal-l">Argint</span>
+      </div>
+      <div class="medal bronze">
+        <span class="medal-icon">🥉</span>
+        <span class="medal-n">13</span>
+        <span class="medal-l">Bronz</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PERSONALITATI -->
+<section class="pers reveal">
+  <div class="pers-in">
+
+    <header class="pers-hdr">
+      <span class="pers-overline">Elevi celebri</span>
+      <h2 class="pers-title">Personalități care au<br><em>marcat istoria</em></h2>
+      <p class="pers-sub">52 de absolvenți ai Colegiului au fost primiți în Academia Română — cel mai înalt for academic al țării — pentru contribuția adusă la dezvoltarea științei, artei și culturii românești și universale.</p>
+    </header>
+
+    <!-- Academicieni — două coloane tipografice -->
+    <div class="pers-cols">
+
+      <div class="pers-entry"><span class="pe-name">Theodor Aman</span><span class="pe-dot"></span><span class="pe-role">Pictor și grafician</span></div>
+      <div class="pers-entry"><span class="pe-name">Constantin Angelescu</span><span class="pe-dot"></span><span class="pe-role">Medic și om politic</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Eugen Angelescu</span><span class="pe-dot"></span><span class="pe-role">Chimist</span></div>
+      <div class="pers-entry"><span class="pe-name">Corneliu Baba</span><span class="pe-dot"></span><span class="pe-role">Pictor</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Alexandru Balaci</span><span class="pe-dot"></span><span class="pe-role">Critic și istoric literar</span></div>
+      <div class="pers-entry"><span class="pe-name">Nicolae Bănescu</span><span class="pe-dot"></span><span class="pe-role">Istoric</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Marcu Botzan</span><span class="pe-dot"></span><span class="pe-role">Inginer agronom</span></div>
+      <div class="pers-entry"><span class="pe-name">Gheorghe Chițu</span><span class="pe-dot"></span><span class="pe-role">Publicist și om politic</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Dumitru Combiescu</span><span class="pe-dot"></span><span class="pe-role">Medic</span></div>
+      <div class="pers-entry"><span class="pe-name">Nicolae Condiescu</span><span class="pe-dot"></span><span class="pe-role">General și scriitor</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Gogu Constantinescu</span><span class="pe-dot"></span><span class="pe-role">Inginer, inventator</span></div>
+      <div class="pers-entry"><span class="pe-name">George M. Fontanin</span><span class="pe-dot"></span><span class="pe-role">Profesor</span></div>
+
+      <div class="pers-entry"><span class="pe-name">George Fotino</span><span class="pe-dot"></span><span class="pe-role">Jurist și istoric</span></div>
+      <div class="pers-entry"><span class="pe-name">Valentin Georgescu</span><span class="pe-dot"></span><span class="pe-role">Jurist, istoric, poet</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Dimitrie Gerota</span><span class="pe-dot"></span><span class="pe-role">Medic</span></div>
+      <div class="pers-entry"><span class="pe-name">Traian Gheorghiu</span><span class="pe-dot"></span><span class="pe-role">Fizician</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Eugen Ionescu</span><span class="pe-dot"></span><span class="pe-role">Profesor, critic literar</span></div>
+      <div class="pers-entry"><span class="pe-name">Traian Lalescu</span><span class="pe-dot"></span><span class="pe-role">Matematician</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Alexandru Macedonski</span><span class="pe-dot"></span><span class="pe-role">Scriitor</span></div>
+      <div class="pers-entry"><span class="pe-name">Titu Liviu Maiorescu</span><span class="pe-dot"></span><span class="pe-role">Prof. universitar, om politic</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Alexandru Marcu</span><span class="pe-dot"></span><span class="pe-role">Profesor</span></div>
+      <div class="pers-entry"><span class="pe-name">Duiliu Marcu</span><span class="pe-dot"></span><span class="pe-role">Arhitect</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Cristea Mateescu</span><span class="pe-dot"></span><span class="pe-role">Inginer</span></div>
+      <div class="pers-entry"><span class="pe-name">Nicolae Mateesco-Matte</span><span class="pe-dot"></span><span class="pe-role">Jurist</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Ion Gh. Maurer</span><span class="pe-dot"></span><span class="pe-role">Jurist și om politic</span></div>
+      <div class="pers-entry"><span class="pe-name">Ștefan Milcu</span><span class="pe-dot"></span><span class="pe-role">Medic, biolog</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Ludovic Mrazec</span><span class="pe-dot"></span><span class="pe-role">Geograf</span></div>
+      <div class="pers-entry"><span class="pe-name">Traian Negrescu</span><span class="pe-dot"></span><span class="pe-role">Inginer</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Jean Negulescu</span><span class="pe-dot"></span><span class="pe-role">Regizor</span></div>
+      <div class="pers-entry"><span class="pe-name">Nicolae Petrulian</span><span class="pe-dot"></span><span class="pe-role">Geolog</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Dionisie Pippidi</span><span class="pe-dot"></span><span class="pe-role">Arheolog, istoric</span></div>
+      <div class="pers-entry"><span class="pe-name">C-tin Nicolaescu-Plopșor</span><span class="pe-dot"></span><span class="pe-role">Arheolog și istoric</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Petrache Poenaru</span><span class="pe-dot"></span><span class="pe-role">Inginer, inventator</span></div>
+      <div class="pers-entry"><span class="pe-name">Nicolae Popescu</span><span class="pe-dot"></span><span class="pe-role">Matematician</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Petre Pandrea</span><span class="pe-dot"></span><span class="pe-role">Scriitor</span></div>
+      <div class="pers-entry"><span class="pe-name">Gh. Niculescu</span><span class="pe-dot"></span><span class="pe-role">General-locotenent</span></div>
+
+      <div class="pers-entry"><span class="pe-name">N. Ch. Quintescu</span><span class="pe-dot"></span><span class="pe-role">Critic literar</span></div>
+      <div class="pers-entry"><span class="pe-name">C-tin Rădulescu-Motru</span><span class="pe-dot"></span><span class="pe-role">Filosof</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Mihai Șerban</span><span class="pe-dot"></span><span class="pe-role">Biochimist</span></div>
+      <div class="pers-entry"><span class="pe-name">Sabba Ștefănescu</span><span class="pe-dot"></span><span class="pe-role">Geolog</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Simion Stoilov</span><span class="pe-dot"></span><span class="pe-role">Matematician</span></div>
+      <div class="pers-entry"><span class="pe-name">Ioan Tanoviceanu</span><span class="pe-dot"></span><span class="pe-role">Jurist</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Gheorghe Tătărescu</span><span class="pe-dot"></span><span class="pe-role">Om politic</span></div>
+      <div class="pers-entry"><span class="pe-name">Nicolae Titulescu</span><span class="pe-dot"></span><span class="pe-role">Diplomat și om politic</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Gheorghe Țițeica</span><span class="pe-dot"></span><span class="pe-role">Matematician</span></div>
+      <div class="pers-entry"><span class="pe-name">Petre Vâncea</span><span class="pe-dot"></span><span class="pe-role">Medic</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Nicolae Vasilescu-Karpen</span><span class="pe-dot"></span><span class="pe-role">Inginer</span></div>
+      <div class="pers-entry"><span class="pe-name">George Vâlsan</span><span class="pe-dot"></span><span class="pe-role">Geograf</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Amilcar Vasiliu</span><span class="pe-dot"></span><span class="pe-role">Inginer agronom</span></div>
+      <div class="pers-entry"><span class="pe-name">Vlad Voiculescu</span><span class="pe-dot"></span><span class="pe-role">Medic</span></div>
+
+      <div class="pers-entry"><span class="pe-name">Ștefan Voitec</span><span class="pe-dot"></span><span class="pe-role">Om politic</span></div>
+      <div class="pers-entry"><span class="pe-name">Ilie Murgulescu</span><span class="pe-dot"></span><span class="pe-role">Chimist</span></div>
+
+          <div class="pers-entry"><span class="pe-name">Traian Demetrescu</span><span class="pe-role">Scriitor</span></div>
+      <div class="pers-entry"><span class="pe-name">Felix Aderca</span><span class="pe-role">Scriitor</span></div>
+      <div class="pers-entry"><span class="pe-name">Gib Mihăescu</span><span class="pe-role">Scriitor</span></div>
+      <div class="pers-entry"><span class="pe-name">Adrian Păunescu</span><span class="pe-role">Poet</span></div>
+      <div class="pers-entry"><span class="pe-name">Tudor Gheorghe</span><span class="pe-role">Muzician</span></div>
+      <div class="pers-entry"><span class="pe-name">Amza Pellea</span><span class="pe-role">Actor</span></div>
+      <div class="pers-entry"><span class="pe-name">Ion Tuculescu</span><span class="pe-role">Pictor</span></div>
+      <div class="pers-entry"><span class="pe-name">Lamia Beligan</span><span class="pe-role">Actriță</span></div>
+      <div class="pers-entry"><span class="pe-name">Daniela Crăsnaru</span><span class="pe-role">Poetă</span></div>
+      <div class="pers-entry"><span class="pe-name">Doina Drăguț</span><span class="pe-role">Jurnalistă</span></div>
+      <div class="pers-entry"><span class="pe-name">Gabriel Chifu</span><span class="pe-role">Poet</span></div>
+      <div class="pers-entry"><span class="pe-name">Ovidiu Ghidirmic</span><span class="pe-role">Critic literar</span></div>
+      <div class="pers-entry"><span class="pe-name">Alexandru Mironov</span><span class="pe-role">Jurnalist</span></div>
+      <div class="pers-entry"><span class="pe-name">Valer Delacheza</span><span class="pe-role">Muzician</span></div>
+      <div class="pers-entry"><span class="pe-name">Constanța Nicolau</span><span class="pe-role">Actriță</span></div>
+      <div class="pers-entry"><span class="pe-name">Ovidiu Bârbulescu</span><span class="pe-role">Artist</span></div>
+      <div class="pers-entry"><span class="pe-name">Gabriel Bratu</span><span class="pe-role">Artist</span></div>
+      <div class="pers-entry"><span class="pe-name">Eustatiu Gregorian</span><span class="pe-role">Muzician</span></div>
+      <div class="pers-entry"><span class="pe-name">Constantin Bobescu</span><span class="pe-role">Violonist</span></div>
+      <div class="pers-entry"><span class="pe-name">Lazăr Filip</span><span class="pe-role">Muzician</span></div>
+      <div class="pers-entry"><span class="pe-name">Nicolae Julea</span><span class="pe-role">Muzician</span></div>
+      <div class="pers-entry"><span class="pe-name">Ion Vasilescu</span><span class="pe-role">Compozitor</span></div>
+      <div class="pers-entry"><span class="pe-name">Aristide Cantorichi</span><span class="pe-role">Muzician</span></div>
+      <div class="pers-entry"><span class="pe-name">Ronald Bulfinschi</span><span class="pe-role">Artist</span></div>
+      <div class="pers-entry"><span class="pe-name">Manu Nedeianu</span><span class="pe-role">Artist</span></div>
+      <div class="pers-entry"><span class="pe-name">Eustatiu Stoenescu</span><span class="pe-role">Pictor</span></div>
+      <div class="pers-entry"><span class="pe-name">Eugen Târu</span><span class="pe-role">Scriitor</span></div>
+      <div class="pers-entry"><span class="pe-name">Costache Petrescu</span><span class="pe-role">Publicist</span></div>
+      <div class="pers-entry"><span class="pe-name">Jean Nițescu</span><span class="pe-role">Regizor</span></div>
+      <div class="pers-entry"><span class="pe-name">Mihai Migel Gelep</span><span class="pe-role">Artist</span></div>
+      <div class="pers-entry"><span class="pe-name">Victor Parhon</span><span class="pe-role">Medic</span></div>
+      <div class="pers-entry"><span class="pe-name">Alexandru Firescu</span><span class="pe-role">Muzician</span></div>
+  </div><!-- /pers-cols -->
+  </div>
+</section>
+
+<!-- PATRIMONY -->
+<section class="pat reveal">
+  <div class="pat-in">
+    <div class="pat-hd">
+      <span class="pat-hd-eyebrow">Patrimoniu unic</span>
+      <h2>Comori care<br>ne definesc</h2>
+    </div>
+
+    <!-- Row 1: big + tall -->
+    <div class="bento">
+      <div class="bc big reveal">
+        <div class="bc-img navy">
+          <span class="bc-img-lbl">Biblioteca „Mihail Strajan"</span>
+        </div>
+        <div class="bc-body">
+          <span class="bc-tag">Bibliotecă · 1836</span>
+          <h3>Un templu al culturii</h3>
+          <p>Una dintre cele mai valoroase biblioteci din țară, cum o numea <strong>Nicolae Titulescu</strong>. Fondată în 1836, adăpostește cărți rare tipărite cu mai bine de patru secole în urmă. <strong>Cea mai valoroasă</strong> — Biblia de la București, unul dintre puținele exemplare din țară.</p>
+          <div class="bc-stat">
+            <div><span class="bc-sn">1514</span><span class="bc-sl">Prima carte</span></div>
+            <div><span class="bc-sn">40</span><span class="bc-sl">Volume din 1826</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="bc tall reveal" style="transition-delay:.1s">
+        <div class="bc-img copper">
+          <span class="bc-img-lbl">Ecorseul lui Brâncuși<br>Laborator de biologie</span>
+        </div>
+        <div class="bc-body">
+          <span class="bc-tag">Artă · Brâncuși</span>
+          <h3>Una din patru replici existente în lume</h3>
+          <p>Lucrarea de absolvire a Școlii de Belle Arte din București. Sursa de inspirație — mulajul lui Hermes din <strong>Muzeul Capitolium din Roma</strong>.</p>
+          <div class="bc-stat">
+            <div><span class="bc-sn">4</span><span class="bc-sl">Replici mondiale</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: 3 small -->
+    <div class="bento-sm">
+      <div class="bc sm reveal" style="transition-delay:.05s">
+        <div class="bc-img green">
+          <span class="bc-img-lbl">Colecție de roci<br>și minerale</span>
+        </div>
+        <div class="bc-body">
+          <span class="bc-tag">Mineralogie</span>
+          <h3>24 premiere naționale în roci</h3>
+          <p>Colecție realizată între 1900–1982. Printre ele: <strong>diamantul de Maramureș</strong>, pirita, azuritul, stribina cu barita.</p>
+        </div>
+      </div>
+      <div class="bc sm reveal" style="transition-delay:.1s">
+        <div class="bc-img violet">
+          <span class="bc-img-lbl">Fluturi exotici<br>și autohtoni</span>
+        </div>
+        <div class="bc-body">
+          <span class="bc-tag">Entomologie</span>
+          <h3>7700 exemplare din toate zonele globului</h3>
+          <p><strong>5700</strong> exotice + <strong>2000</strong> microlepidoptere autohtone. Morpho, Caligo Eurilocus, Saturnia Pyri.</p>
+        </div>
+      </div>
+      <div class="bc sm reveal" style="transition-delay:.15s">
+        <div class="bc-img" style="background:-webkit-linear-gradient(135deg,#2a3a30,#0f1f14);background:linear-gradient(135deg,#2a3a30,#0f1f14)">
+          <span class="bc-img-lbl">Parteneriate<br>internaționale</span>
+        </div>
+        <div class="bc-body">
+          <span class="bc-tag">Internațional</span>
+          <h3>Absolvenți apreciați în Europa</h3>
+          <p>Admiși la universități de prestigiu din <strong>Franța, Italia, Belgia, Spania, Germania</strong>.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WORLD -->
+<section class="world reveal">
+  <div class="world-in">
+    <div class="world-text">
+      <span class="eyebrow">Deschidere spre lume</span>
+      <h2>Parteneriate și schimburi culturale</h2>
+      <p>Atât profesorii, cât și elevii au participat la parteneriate cu școli din țară sau din străinătate. Prin intermediul schimburilor interculturale, au venit în contact cu elevi și profesori din <strong>toată Europa</strong>.</p>
+    </div>
+    <div class="country-list">
+      <div class="country-row"><span class="c-flag">🇫🇷</span><span class="c-name">Franța</span><span class="c-arrow">→</span></div>
+      <div class="country-row"><span class="c-flag">🇮🇹</span><span class="c-name">Italia</span><span class="c-arrow">→</span></div>
+      <div class="country-row"><span class="c-flag">🇧🇪</span><span class="c-name">Belgia</span><span class="c-arrow">→</span></div>
+      <div class="country-row"><span class="c-flag">🇪🇸</span><span class="c-name">Spania</span><span class="c-arrow">→</span></div>
+      <div class="country-row"><span class="c-flag">🇩🇪</span><span class="c-name">Germania</span><span class="c-arrow">→</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta reveal">
+  <div class="cta-in">
+    <div class="cta-text">
+      <h2>Două sute de ani<br>de <em>excelență</em></h2>
+      <p>Celebrăm bicentenarul printr-un program amplu de manifestări academice, culturale și comunitare. Descoperă evenimentele din 2026.</p>
+    </div>
+    <div class="cta-action">
+      <a href="program-bicentenar.html" class="cta-btn">Program Bicentenar →</a>
+      <a href="index.html" class="cta-btn outline">Pagina principală</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+</main>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-name">Colegiul Național Carol I</div>
+      <div class="footer-tagline">Fondat în 1826 · Craiova, România</div>
+      <div class="footer-contact">
+        <span>Str. Ioan Maiorescu nr. 2</span>
+        <span>200418, Dolj</span>
+        <span>Tel: 0251 413 230</span>
+        <span><a href="mailto:office@cnc.ro">office@cnc.ro</a></span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Colegiu</div>
+      <a href="despre-istoric.html">Istoric și tradiție</a>
+      <a href="conducere.html">Echipa de conducere</a>
+      <a href="consiliu-administratie.html">Consiliul de administrație</a>
+      <a href="consiliu-profesoral.html">Consiliul profesoral</a>
+      <a href="oferta-educationala.html">Ofertă educațională</a>
+      <a href="comisii.html">Comisii</a>
+      <a href="consiliu-elevi.html">Consiliul elevilor</a>
+      <a href="interes-public.html">Informații de interes public</a>
+      <a href="regulamente.html">Legislații</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Navigare</div>
+      <a href="index.html">Acasă</a>
+      <a href="admitere-examene.html">Admitere și examene</a>
+      <a href="activitati-dotari.html">Activități și Dotări</a>
+      <a href="stiri.html">Știri</a>
+      <a href="secretariat.html">Secretariat</a>
+      <a href="program-bicentenar.html">Program Bicentenar 2026</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title"><a href="program-bicentenar.html">Bicentenar 1826–2026</a></div>
+      <a href="program-bicentenar.html">Program aniversar</a>
+      <a href="despre-istoric.html">Istoria colegiului</a>
+      <div class="footer-copy">© 2026 Colegiul Național Carol I Craiova. Toate drepturile rezervate.</div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var burger = document.getElementById('navBurger');
+  var menu   = document.getElementById('mobileMenu');
+  if (!burger || !menu) return;
+
+  burger.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  // close on outside click / scroll
+  document.addEventListener('click', function(e){
+    if (!menu.contains(e.target) && !burger.contains(e.target) && menu.classList.contains('open')){
+      menu.classList.remove('open');
+      burger.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // sub-menu toggle
+  document.querySelectorAll('.mm-has-sub > a').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var li = a.parentElement;
+      li.classList.toggle('open');
+    });
+  });
+})();
+</script>
+<script>
+(function() {
+  const svg   = document.getElementById('logoSvg');
+  const grad  = document.getElementById('logo-shimmer');
+
+  // Gradient band vector: diagonal ~35deg, half-length = 55 viewBox units
+  // At any center (cx, cy), we set:
+  //   x1 = cx - dx, y1 = cy - dy
+  //   x2 = cx + dx, y2 = cy + dy
+  const VB_W = 216.86, VB_H = 34.36;
+
+  // Current animated center
+  let cx = -120, cy = 200; // off-screen start
+  let tcx = cx, tcy = cy;
+  let glowOpacity = 0, targetGlow = 0;
+  let isHovering = false;
+  let raf = null;
+
+  const goldIds = ['ga','gb','gc','gd','ge'];
+  // Base gold colors at full glow
+  const goldColors = ['#0f385a','#c9860a','#ffd000','#c9860a','#0f385a'];
+  // At glow=0 all are navy; at glow=1 they are gold
+  function lerpColor(t) {
+    // lerp each gold stop between navy and its target color
+    // use opacity trick via the stop-color only — no stop-opacity
+    // actually simplest: just setAttribute on stop-color won't interpolate easily
+    // Instead: just set gradient x1/y1/x2/y2, glow controls stop offsets tightening
+    // Simplest correct approach: one stop-opacity on a wrapper
+  }
+
+  function mix(hex, t) {
+    const navy = [15, 56, 90];
+    const r  = parseInt(hex.slice(1,3),16);
+    const gv = parseInt(hex.slice(3,5),16);
+    const b  = parseInt(hex.slice(5,7),16);
+    const nr = Math.round(navy[0] + (r  - navy[0]) * t);
+    const ng = Math.round(navy[1] + (gv - navy[1]) * t);
+    const nb = Math.round(navy[2] + (b  - navy[2]) * t);
+    return '#' + [nr,ng,nb].map(v=>v.toString(16).padStart(2,'0')).join('');
+  }
+
+  function applyGrad() {
+    const g = glowOpacity;
+    // Move radial gradient center to cursor
+    grad.setAttribute('cx', cx.toFixed(2));
+    grad.setAttribute('cy', cy.toFixed(2));
+    grad.setAttribute('fx', cx.toFixed(2));
+    grad.setAttribute('fy', cy.toFixed(2));
+
+    // Center: bright gold → mid: amber → outer: navy
+    document.getElementById('gc').setAttribute('stop-color', mix('#ffd000', g));
+    document.getElementById('gb').setAttribute('stop-color', mix('#c9860a', g));
+    document.getElementById('ga').setAttribute('stop-color', mix('#2a4e6a', g));
+  }
+
+  function lerp(a,b,t){ return a+(b-a)*t; }
+
+  function tick() {
+    const posEase  = isHovering ? 0.1 : 0.04;
+    const glowEase = isHovering ? 0.07 : 0.04;
+
+    cx = lerp(cx, tcx, posEase);
+    cy = lerp(cy, tcy, posEase);
+    glowOpacity = lerp(glowOpacity, targetGlow, glowEase);
+
+    applyGrad();
+
+    const stillMoving = Math.abs(cx-tcx)>0.05 || Math.abs(cy-tcy)>0.05
+                     || Math.abs(glowOpacity-targetGlow)>0.002;
+    if (stillMoving) raf = requestAnimationFrame(tick);
+    else raf = null;
+  }
+
+  function startTick() { if (!raf) raf = requestAnimationFrame(tick); }
+
+  // Mouse tracking
+  svg.addEventListener('mousemove', function(e) {
+    const rect = svg.getBoundingClientRect();
+    tcx = ((e.clientX - rect.left)  / rect.width)  * VB_W;
+    tcy = ((e.clientY - rect.top)   / rect.height) * VB_H;
+    targetGlow = 1;
+    isHovering = true;
+    startTick();
+  });
+
+  svg.addEventListener('mouseleave', function() {
+    targetGlow = 0;
+    isHovering = false;
+    startTick();
+  });
+
+  // Auto sweep on load: diagonal from bottom-left to top-right
+  (function autoSweep() {
+    const DUR = 7500;
+    const DELAY = 600;
+    let startTime = null;
+
+    function sweep(now) {
+      if (isHovering) return; // user took over
+      if (!startTime) startTime = now;
+      const elapsed = now - startTime - DELAY;
+      if (elapsed < 0) { requestAnimationFrame(sweep); return; }
+      const t = Math.min(elapsed / DUR, 1);
+      // Bell opacity
+      const op = Math.sin(Math.PI * t);
+      // Position: bottom-left off-screen → top-right off-screen
+      const px = -30  + t * (VB_W + 60);
+      const py = VB_H * 0.5;
+      cx = px; cy = py;
+      tcx = px; tcy = py;
+      glowOpacity = op;
+      targetGlow = op;
+      applyGrad();
+      if (t < 1) requestAnimationFrame(sweep);
+    }
+    requestAnimationFrame(sweep);
+  })();
+
+})();
+</script>
+</body>
+</html>

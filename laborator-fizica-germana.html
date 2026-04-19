@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Laborator Fizic&#x103; &amp; Limb&#x103; German&#x103; &middot; Colegiul Na&#x21b;ional Carol I Craiova</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="global.css"/>
+<link rel="stylesheet" href="colegiu.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-inner">
+  <a href="index.html" class="navbar-logo-img" id="logoWrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216.86 34.36" height="31" width="auto" style="display:block;" id="logoSvg">
+  <defs>
+    <!--
+      Simple navy→gold→navy gradient in userSpaceOnUse.
+      The entire gradient vector is positioned so the gold center
+      sits at the cursor position. JS just updates x1/y1/x2/y2.
+      Band half-width ~35 viewBox units at 35deg diagonal.
+    -->
+    <radialGradient id="logo-shimmer" gradientUnits="userSpaceOnUse"
+      cx="-200" cy="200" r="60" fx="-200" fy="200">
+      <stop id="gc" offset="0%"   stop-color="#0f385a"/>
+      <stop id="gb" offset="25%"  stop-color="#0f385a"/>
+      <stop id="ga" offset="55%"  stop-color="#0f385a"/>
+      <stop offset="100%" stop-color="#0f385a"/>
+    </radialGradient>
+  </defs>
+  <g id="Layer_2-2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <path fill="url(#logo-shimmer)" d="M0,8.07C0,3.49,2.85,0,7.4,0c3.8,0,6.04,2.26,6.36,5.2h-3.11c-.28-1.55-1.44-2.57-3.26-2.57-2.85,0-4.21,2.37-4.21,5.43s1.64,5.41,4.23,5.41c1.83,0,3.13-1.1,3.32-2.72h3.06c-.09,1.36-.67,2.67-1.7,3.64-1.06.99-2.54,1.64-4.68,1.64-4.33,0-7.42-3.34-7.42-7.98Z"/>
+        <path fill="url(#logo-shimmer)" d="M15.18,8.04c0-4.62,2.89-8.04,7.44-8.04s7.42,3.43,7.42,8.04-2.87,8.02-7.42,8.02-7.44-3.41-7.44-8.02ZM26.85,8.04c0-3.08-1.38-5.48-4.21-5.48s-4.27,2.39-4.27,5.48,1.44,5.46,4.27,5.46,4.21-2.39,4.21-5.46Z"/>
+        <path fill="url(#logo-shimmer)" d="M32.18.3h3.13v12.81h7.25v2.61h-10.37V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M44.66.3h11.34v2.63h-8.22v3.45h7.2v2.57h-7.2v4.16h8.28v2.61h-11.41V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M69.31,13.65h-.04c-1.06,1.77-2.5,2.39-4.33,2.39-2.33,0-4.14-.84-5.41-2.24-1.27-1.42-2.01-3.41-2.01-5.74,0-2.57.91-4.81,2.52-6.3,1.25-1.14,2.89-1.77,4.96-1.77,3.88,0,6.1,2.14,6.6,5.15h-3.06c-.35-1.49-1.49-2.57-3.47-2.57-2.91,0-4.36,2.42-4.36,5.48s1.66,5.46,4.31,5.46c2.39,0,3.97-1.79,3.97-3.49v-.09h-3.71v-2.42h6.49v8.2h-2.35l-.11-2.07Z"/>
+        <path fill="url(#logo-shimmer)" d="M74.4.3h3.13v15.42h-3.13V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M80.22,10.76V.3h3.13v10.46c0,1.6.8,2.72,2.89,2.72,1.98,0,2.91-1.16,2.91-2.76V.3h3.13v10.46c0,3.3-2.03,5.22-5.97,5.22s-6.08-1.88-6.08-5.22Z"/>
+        <path fill="url(#logo-shimmer)" d="M94.95.3h3.13v12.81h7.25v2.61h-10.37V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M111.49.3h3.17l5.13,8.61c.5.84,1.08,2.16,1.08,2.16h.04s-.09-1.6-.09-2.67V.3h3.08v15.42h-3.02l-5.26-8.52c-.5-.82-1.1-2.14-1.1-2.14h-.04s.09,1.62.09,2.7v7.96h-3.08V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M130.97.3h3.24l5.43,15.42h-3.26l-1.04-3.28h-5.56l-1.01,3.28h-3.17l5.37-15.42ZM130.52,10.05h4.08l-1.38-4.44c-.26-.82-.63-2.37-.63-2.37h-.04s-.39,1.55-.65,2.37l-1.38,4.44Z"/>
+        <path fill="url(#logo-shimmer)" d="M139.92.3h12.4v2.63h-4.64v12.79h-3.13V2.93h-4.64V.3ZM144.75,20.45c.63-.15,1.34-.52,1.34-1.38h-1.29v-2.31h2.67v2.09c0,1.66-1.32,2.39-2.72,2.54v-.95Z"/>
+        <path fill="url(#logo-shimmer)" d="M154.34.3h3.13v15.42h-3.13V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M159.63,8.04c0-4.62,2.89-8.04,7.44-8.04s7.42,3.43,7.42,8.04-2.87,8.02-7.42,8.02-7.44-3.41-7.44-8.02ZM171.3,8.04c0-3.08-1.38-5.48-4.21-5.48s-4.27,2.39-4.27,5.48,1.44,5.46,4.27,5.46,4.21-2.39,4.21-5.46Z"/>
+        <path fill="url(#logo-shimmer)" d="M176.62.3h3.17l5.13,8.61c.5.84,1.08,2.16,1.08,2.16h.04s-.09-1.6-.09-2.67V.3h3.08v15.42h-3.02l-5.26-8.52c-.5-.82-1.1-2.14-1.1-2.14h-.04s.09,1.62.09,2.7v7.96h-3.08V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M196.1.3h3.24l5.43,15.42h-3.26l-1.04-3.28h-5.56l-1.01,3.28h-3.17l5.37-15.42ZM195.64,10.05h4.08l-1.38-4.44c-.26-.82-.63-2.37-.63-2.37h-.04s-.39,1.55-.65,2.37l-1.38,4.44Z"/>
+        <path fill="url(#logo-shimmer)" d="M206.49.3h3.13v12.81h7.25v2.61h-10.37V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M8.93,34.31C3.77,34.31.24,31.27.24,26.18s3.97-8.17,8.52-8.17c1.92,0,3.58.47,4.83,1.47l.54-1.49h1.92v6.36h-2.14c-.24-2.76-2.03-4.4-4.51-4.4-3.11,0-5.07,2.33-5.07,6.23s1.83,6.19,5.07,6.19c2.7,0,4.51-1.4,4.51-4.38h2.33c.04,4.1-3.02,6.32-7.31,6.32Z"/>
+        <path fill="url(#logo-shimmer)" d="M16.91,33.88v-1.57c1.75-.06,2.01.06,3.45-3.54l4.12-10.29h3.43l4.1,10.5c1.08,2.78,1.34,3.23,3.28,3.32v1.57h-8.63v-1.57c2.14-.13,1.88-.52,1.1-2.91h-5.31c-.86,2.39-.75,2.78,1.4,2.91v1.57h-6.94ZM27.19,27.67l-1.92-5.97-2.2,5.97h4.12Z"/>
+        <path fill="url(#logo-shimmer)" d="M36.25,33.88v-1.57c2.35-.06,2.42-.17,2.42-3.32v-5.18c0-3.56-.06-3.73-2.42-3.77v-1.55h8.32c4.49,0,6.77.69,6.77,3.88,0,2.65-1.92,3.84-4.96,4.05v.11c1.01.19,2.03.6,2.76,1.42,1.25,1.4,1.19,4.14,2.31,4.14.58,0,.78-.56.78-1.4v-.82h1.23v.99c0,2.16-1.23,3.45-3.56,3.45-1.55,0-2.39-.43-2.87-1.08-1.47-2.09.71-6.38-4.44-6.53v2.29c0,3.15.06,3.26,2.42,3.32v1.57h-8.76ZM42.59,24.91h1.57c2.07,0,3.15-.71,3.15-2.31,0-1.75-1.08-2.31-3.15-2.31h-1.57v4.62Z"/>
+        <path fill="url(#logo-shimmer)" d="M63.53,34.36c-4.74,0-8.73-3.13-8.73-8.17s3.99-8.17,8.73-8.17,8.86,3.11,8.86,8.17-4.03,8.17-8.86,8.17ZM63.6,32.42c2.98,0,4.7-2.26,4.7-6.23s-1.73-6.23-4.7-6.23-4.7,2.29-4.7,6.23,1.73,6.23,4.7,6.23Z"/>
+        <path fill="url(#logo-shimmer)" d="M73.91,33.88v-1.57c2.29-.06,2.42-.13,2.42-3.32v-4.74c0-4.16-.06-4.12-2.42-4.21v-1.55h8.99v1.55c-2.39.09-2.65.04-2.65,4.21v4.7c0,2.42.39,3.13,3.36,3.13h.32c2.67,0,3.69-1.81,4.27-4.66h1.79l-.45,6.47h-15.64Z"/>
+        <path fill="url(#logo-shimmer)" d="M99.44,31.14c1.94,0,2.61-.19,3.17-2.05l1.7-5.56c.67-2.18.11-2.31-1.83-2.31h-.82l.84-2.74h7.44l-.84,2.74h-.78c-1.94,0-2.63.15-3.28,2.31l-1.68,5.54c-.52,1.73-.04,2.07,1.51,2.07h1.21l-.84,2.74h-7.44l.84-2.74h.8Z"/>
+        <path fill="url(#logo-shimmer)" d="M115.72,26.23c0-4.57,2.85-8.07,7.4-8.07,3.8,0,6.04,2.26,6.36,5.2h-3.11c-.28-1.55-1.44-2.57-3.26-2.57-2.85,0-4.21,2.37-4.21,5.43s1.64,5.41,4.23,5.41c1.83,0,3.13-1.1,3.32-2.72h3.06c-.09,1.36-.67,2.67-1.7,3.64-1.06.99-2.54,1.64-4.68,1.64-4.33,0-7.42-3.34-7.42-7.98Z"/>
+        <path fill="url(#logo-shimmer)" d="M131.14,18.46h7.07c2.98,0,4.96,1.73,4.96,4.29,0,1.81-.84,3.19-2.83,3.73v.06c1.42.41,2.16,1.23,2.35,3.11.22,2.18.13,3.84.67,4.08v.15h-3c-.39-.17-.43-1.9-.56-3.56-.13-1.68-1.08-2.63-3.02-2.63h-2.52v6.19h-3.13v-15.42ZM134.27,25.28h3.32c1.7,0,2.54-.88,2.54-2.11s-.8-2.18-2.46-2.18h-3.41v4.29Z"/>
+        <path fill="url(#logo-shimmer)" d="M149.54,18.46h3.24l5.43,15.42h-3.26l-1.04-3.28h-5.56l-1.01,3.28h-3.17l5.37-15.42ZM149.08,28.21h4.08l-1.38-4.44c-.26-.82-.63-2.37-.63-2.37h-.04s-.39,1.55-.65,2.37l-1.38,4.44Z"/>
+        <path fill="url(#logo-shimmer)" d="M159.52,18.46h3.13v15.42h-3.13v-15.42Z"/>
+        <path fill="url(#logo-shimmer)" d="M164.37,26.21c0-4.62,2.89-8.04,7.44-8.04s7.42,3.43,7.42,8.04-2.87,8.02-7.42,8.02-7.44-3.41-7.44-8.02ZM176.04,26.21c0-3.08-1.38-5.48-4.21-5.48s-4.27,2.39-4.27,5.48,1.44,5.46,4.27,5.46,4.21-2.39,4.21-5.46Z"/>
+        <path fill="url(#logo-shimmer)" d="M179.04,18.46h3.28l2.72,8.93c.3,1.01.67,2.46.67,2.46h.04s.37-1.47.67-2.46l2.7-8.93h3.17l-5.2,15.42h-2.85l-5.2-15.42Z"/>
+        <path fill="url(#logo-shimmer)" d="M196.14,18.46h3.24l5.43,15.42h-3.26l-1.04-3.28h-5.56l-1.01,3.28h-3.17l5.37-15.42ZM195.69,28.21h4.08l-1.38-4.44c-.26-.82-.63-2.37-.63-2.37h-.04s-.39,1.55-.65,2.37l-1.38,4.44Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
+</a>
+  <button class="nav-burger" id="navBurger" aria-label="Meniu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="navbar-nav">
+        <li><a href="index.html">Acasă</a></li>
+    <li class="has-dropdown">
+      <a href="despre-istoric.html" tabindex="0">Colegiu <span class="dd-caret">▾</span></a>
+      <ul class="dropdown">
+      <li class="dd-bicentenar"><a href="<div class="footer-col-title"><a href="<div class="footer-col-title"><a href="<div class="footer-col-title"><a href="<div class="footer-col-title"><a href="program-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">✦ Bicentenar 1826–2026</a></li>
+      <li><a href="conducere.html">Echipa de conducere</a></li>
+      <li><a href="consiliu-administratie.html">Consiliul de administrație</a></li>
+      <li><a href="consiliu-profesoral.html">Consiliul profesoral</a></li>
+      <li><a href="comisii.html">Comisii</a></li>
+      <li><a href="consiliu-elevi.html">Consiliul elevilor</a></li>
+      <li><a href="interes-public.html">Informații de interes public</a></li>
+      <li><a href="regulamente.html">Legislații și regulamente</a></li>
+      </ul>
+    </li>
+        <li class="has-dropdown">
+      <a href="admitere-examene.html" tabindex="0" style="color:var(--gold)">Admitere și examene <span class="dd-caret">▾</span></a>
+      <ul class="dropdown">
+      <li><a href="inscrieri-primar.html">Înscrieri învățământ primar 2026-2027</a></li>
+      <li><a href="clasa-v.html">Clasa a V-a</a></li>
+      <li><a href="clasa-ix.html">Clasa a IX-a</a></li>
+      <li><a href="evaluare-ii-iv-vi.html">Evaluare II, IV, VI</a></li>
+      <li><a href="evaluare-nationala.html">Evaluare națională</a></li>
+      <li><a href="bacalaureat.html">Bacalaureat</a></li>
+      <li><a href="examene-internationale.html">Examene internaționale</a></li>
+      <li><a href="bacalaureat-francofon.html">Bacalaureat francofon</a></li>
+      <li><a href="transferuri.html" class="dd-active">Transferuri</a></li>
+      </ul>
+    </li>
+        <li class="has-mega">
+      <a href="activitati-dotari.html" tabindex="0">Activități și Dotări <span class="dd-caret">▾</span></a>
+      <div class="mega-menu">
+        <div class="mega-inner">
+          <div class="mega-col">
+            <div class="mega-col-title">Activități</div>
+      <a href="proiecte-educationale.html">Proiecte educaționale</a>
+      <a href="scoala-altfel.html">Școala Altfel</a>
+      <a href="concursuri-scolare.html">Concursuri școlare</a>
+      <a href="cluburi-asociatii.html">Cluburi și Asociații</a>
+      <a href="publicatii.html">Publicații</a>
+          </div>
+          <div class="mega-col">
+            <div class="mega-col-title">Dotări</div>
+      <a href="bazin-semiolimpic.html">Bazin Semiolimpic</a>
+      <a href="biblioteca-mihail-strajan.html">Biblioteca Mihail Strajan</a>
+      <a href="cabinete-specializate.html">Cabinete specializate</a>
+      <a href="muzeul-colegiului.html">Muzeul Colegiului</a>
+      <a href="baza-sportiva.html">Bază sportivă</a>
+      <a href="sala-festivitati.html">Sală festivități</a>
+      <a href="colectii-inedite.html">Colecții inedite</a>
+          </div>
+        </div>
+      </div>
+    </li>
+        <li><a href="stiri.html" style="color:var(--gold)">Știri</a></li>
+        <li><a href="secretariat.html">Secretariat</a></li>
+  </ul>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-inner">
+    <ul>
+      <li><a href="index.html">Acasă</a></li>
+      <li class="mm-has-sub">
+        <a href="despre-istoric.html" tabindex="0">Colegiu <span class="mm-caret">▾</span></a>
+        <ul class="mm-sub">
+          <li class="dd-bicentenar"><a href="<div class="footer-col-title"><a href="<div class="footer-col-title"><a href="<div class="footer-col-title"><a href="<div class="footer-col-title"><a href="program-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">✦ Bicentenar 1826–2026</a></li>
+          <li><a href="conducere.html">Echipa de conducere</a></li>
+          <li><a href="consiliu-administratie.html">Consiliul de administrație</a></li>
+          <li><a href="consiliu-profesoral.html">Consiliul profesoral</a></li>
+          <li><a href="comisii.html">Comisii</a></li>
+          <li><a href="consiliu-elevi.html">Consiliul elevilor</a></li>
+          <li><a href="interes-public.html">Informații de interes public</a></li>
+          <li><a href="regulamente.html">Legislații și regulamente</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+      <a href="admitere-examene.html" tabindex="0">Admitere și examene <span class="dd-caret">▾</span></a>
+      <ul class="dropdown">
+      <li><a href="inscrieri-primar.html">Înscrieri învățământ primar 2026-2027</a></li>
+      <li><a href="clasa-v.html">Clasa a V-a</a></li>
+      <li><a href="clasa-ix.html">Clasa a IX-a</a></li>
+      <li><a href="evaluare-ii-iv-vi.html">Evaluare II, IV, VI</a></li>
+      <li><a href="evaluare-nationala.html">Evaluare națională</a></li>
+      <li><a href="bacalaureat.html">Bacalaureat</a></li>
+      <li><a href="examene-internationale.html">Examene internaționale</a></li>
+      <li><a href="bacalaureat-francofon.html">Bacalaureat francofon</a></li>
+      <li><a href="transferuri.html">Transferuri</a></li>
+      </ul>
+    </li>
+            <li class="mm-has-sub">
+        <a href="activitati-dotari.html" tabindex="0">Activități și Dotări <span class="mm-caret">▾</span></a>
+        <ul class="mm-sub">
+          <li><div class="mm-mega-title">Activități</div></li>
+          <li><a href="proiecte-educationale.html">Proiecte educaționale</a></li>
+          <li><a href="scoala-altfel.html">Școala Altfel</a></li>
+          <li><a href="concursuri-scolare.html">Concursuri școlare</a></li>
+          <li><a href="cluburi-asociatii.html">Cluburi și Asociații</a></li>
+          <li><a href="publicatii.html">Publicații</a></li>
+          <li><div class="mm-mega-title">Dotări</div></li>
+          <li><a href="bazin-semiolimpic.html">Bazin Semiolimpic</a></li>
+          <li><a href="biblioteca-mihail-strajan.html">Biblioteca Mihail Strajan</a></li>
+          <li><a href="cabinete-specializate.html">Cabinete specializate</a></li>
+          <li><a href="muzeul-colegiului.html">Muzeul Colegiului</a></li>
+          <li><a href="baza-sportiva.html">Bază sportivă</a></li>
+          <li><a href="sala-festivitati.html">Sală festivități</a></li>
+          <li><a href="colectii-inedite.html">Colecții inedite</a></li>
+        </ul>
+      </li>
+      <li><a href="stiri.html">Știri</a></li>
+      <li><a href="secretariat.html">Secretariat</a></li>
+    </ul>
+  </div>
+</div>
+</div>
+
+</div>
+
+<div class="ph">
+  <div class="ph-in">
+    <div class="ph-crumb">
+      <a href="index.html">Acas&#x103;</a><span class="ph-crumb-sep">&rsaquo;</span>
+      <a href="activitati-dotari.html">Activit&#x103;&#x21b;i &amp; Dot&#x103;ri</a><span class="ph-crumb-sep">&rsaquo;</span>
+      <a href="proiecte-educationale.html">Proiecte educa&#x21b;ionale</a><span class="ph-crumb-sep">&rsaquo;</span>
+      <span>Laborator Fizic&#x103; &amp; German&#x103;</span>
+    </div>
+    <div class="ph-hero">
+      <div class="ph-hero-text">
+        <div class="ph-eyebrow">Goethe Institut &middot; Proiect na&#x21b;ional &middot; din 2013</div>
+        <h1 class="ph-title">Un laborator de fizic&#x103; &#x15f;i limba german&#x103;</h1>
+        <p class="ph-subtitle">Ein Labor f&uuml;r Physik und Sprache</p>
+        <div class="ph-pills">
+          <span class="ph-pill gold">&#x1f1e9;&#x1f1ea; Goethe Institut</span>
+          <span class="ph-pill">&#x1f4cd; Admis septembrie 2013</span>
+          <span class="ph-pill"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Bilingv Fizic&#x103; &amp; German&#x103;</span>
+          <span class="ph-pill">&#x1f3eb; CN Carol I</span>
+        </div>
+      </div>
+      <div class="ph-stats">
+        <div class="ph-stat"><div class="ph-stat-num">2013</div><div class="ph-stat-lbl">Admis</div></div>
+        <div class="ph-stat"><div class="ph-stat-num">3</div><div class="ph-stat-lbl">Cadre</div></div>
+        <div class="ph-stat"><div class="ph-stat-num">4</div><div class="ph-stat-lbl">Activit&#x103;&#x21b;i</div></div>
+        <div class="ph-stat"><div class="ph-stat-num">2</div><div class="ph-stat-lbl">Expozi&#x21b;ii</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-wrap">
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-label">Activit&#x103;&#x21b;i</div>
+    <ul class="sidebar-nav">
+      <li class="has-sub open">
+        <a href="proiecte-educationale.html">Proiecte educa&#x21b;ionale</a>
+        <ul class="sidebar-sub">
+          <li><a href="comenius.html">Proiectul COMENIUS</a></li>
+          <li><a href="sedit.html">Proiectul SEDIT</a></li>
+          <li class="active"><a href="laborator-fizica-germana.html">Laborator Fizic&#x103; &amp; German&#x103;</a></li>
+        </ul>
+      </li>
+      <li><a href="scoala-altfel.html">&#x15e;coala Altfel</a></li>
+      <li class="has-sub">
+        <a href="concursuri-scolare.html">Concursuri &#x15f;colare</a>
+        <ul class="sidebar-sub">
+          <li><a href="concurs-titeica.html">Concursul Titeica</a></li>
+          <li><a href="concurs-ion-ciolac.html">Concursul Ion Ciolac</a></li>
+          <li><a href="concurs-queen-victoria.html">Concursul Queen Victoria</a></li>
+          <li><a href="concurs-lazar-edeleanu.html">Concursul Laz&#x103;r Edeleanu</a></li>
+          <li><a href="concurs-lexicon.html">Concursul Lexicon</a></li>
+          <li><a href="alte-concursuri.html">Alte concursuri</a></li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="cluburi-asociatii.html">Cluburi &#x15f;i Asocia&#x21b;ii</a>
+        <ul class="sidebar-sub">
+          <li><a href="centrul-excelenta-cnci.html">Centrul Excelen&#x21b;&#x103; CNCI</a></li>
+          <li><a href="clubul-regina-elisabeta.html">Clubul Regina Elisabeta</a></li>
+          <li><a href="club-dezbateri-perspective.html">Clubul Perspective</a></li>
+        </ul>
+      </li>
+      <li><a href="publicatii.html">Publica&#x21b;ii</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Dot&#x103;ri</div>
+    <ul class="sidebar-nav">
+      <li><a href="bazin-semiolimpic.html">Bazin Semiolimpic</a></li>
+      <li><a href="biblioteca-mihail-strajan.html">Biblioteca Mihail Strajan</a></li>
+      <li><a href="cabinete-specializate.html">Cabinete specializate</a></li>
+      <li><a href="muzeul-colegiului.html">Muzeul Colegiului</a></li>
+      <li><a href="baza-sportiva.html">Baz&#x103; sportiv&#x103;</a></li>
+      <li><a href="sala-festivitati.html">Sal&#x103; festivit&#x103;&#x21b;i</a></li>
+      <li><a href="colectii-inedite.html">Colec&#x21b;ii inedite</a></li>
+    </ul>
+  </div>
+</aside>
+<main class="content">
+
+  <div class="id-strip">
+    <div class="id-strip-logo">
+      <img src="data:image/png;base64,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" alt="Ein Labor fur Physik und Sprache &mdash; Physik Deutsch"/>
+    </div>
+    <div class="id-strip-info">
+      <div class="id-strip-name">Ein Labor f&uuml;r Physik und Sprache &mdash; Un laborator de fizic&#x103; &#x15f;i limba german&#x103;</div>
+      <div class="id-strip-meta">
+        <span class="id-meta-item">&#x1f3e2; <strong>Ini&#x21b;iator:</strong>&nbsp;Goethe Institut Bucure&#x15f;ti</span>
+        <span class="id-meta-item"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <strong>Admis:</strong>&nbsp;septembrie 2013</span>
+        <span class="id-meta-item"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> <strong>Profil:</strong>&nbsp;Bilingv, nivel gimnazial &#x15f;i liceal</span>
+        <span class="id-meta-item">&#x1f91d; <strong>Coordonatori:</strong>&nbsp;prof. Liviu Ionescu, prof. Daniela Chilom</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="sec-label">Despre proiect</div>
+    <div class="proj-body">
+      <p>&#x201e;Un laborator de fizic&#x103; &#x15f;i limba german&#x103;&#x201d; (<em>Ein Labor f&uuml;r Physik und Sprache</em>) este un proiect ini&#x21b;iat de <strong>Goethe Institut Bucure&#x15f;ti</strong> &#x15f;i adresat unit&#x103;&#x21b;ilor de &#xee;nv&#x103;&#x21b;&#x103;m&#xe2;nt de stat din Rom&#xe2;nia. Proiectul urm&#x103;re&#x15f;te promovarea limbii germane prin <strong>cursuri bilingve de fizic&#x103; &#x15f;i german&#x103;</strong>, derulate la nivel gimnazial &#x15f;i liceal.</p>
+      <p>Datorit&#x103; performan&#x21b;elor &#xee;nregistrate de-a lungul anilor de c&#x103;tre elevi &#xe2;n domeniul fizicii &#x15f;i al limbii germane (premii la olimpiade, participare cu succes la activit&#x103;&#x21b;i extra&#x15f;colare cu recunoa&#x15f;tere interna&#x21b;ional&#x103;), <strong>Colegiul Na&#x21b;ional &bdquo;Carol I&rdquo; a fost admis &#xee;ncep&#xe2;nd din septembrie 2013</strong>, &#xee;n urma unei etape de selec&#x21b;ie promovate cu succes, &#xee;n r&#xe2;ndul &#x15f;colilor participante la acest proiect.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="sec-label">Sprijinul Goethe Institut</div>
+    <div class="support-grid">
+      <div class="support-card">
+        <div class="support-icon">&#x1f9ea;</div>
+        <div class="support-title">Truse de laborator</div>
+        <div class="support-desc">Dotarea (sub form&#x103; de &#xee;mprumut) a &#x15f;colilor participante cu truse de laborator pentru experimente de fizic&#x103;</div>
+      </div>
+      <div class="support-card">
+        <div class="support-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <div class="support-title">Formare profesori</div>
+        <div class="support-desc">Cursuri de limb&#x103; german&#x103;, seminarii de perfec&#x21b;ionare metodico-didactic&#x103;, &#xee;nt&#xe2;lniri &#x15f;i vizite de lucru pentru profesorii implica&#x21b;i</div>
+      </div>
+      <div class="support-card">
+        <div class="support-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+        <div class="support-title">Activit&#x103;&#x21b;i culturale</div>
+        <div class="support-desc">Concursuri &#x15f;i activit&#x103;&#x21b;i culturale (expozi&#x21b;ii) pentru elevi, cu recunoa&#x15f;tere interna&#x21b;ional&#x103;</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="sec-label">Activit&#x103;&#x21b;i desf&#x103;&#x15f;urate</div>
+    <ul class="act-list">
+      <li class="act-item">
+        <div class="act-num">a</div>
+        <div class="act-text"><strong>Cercul de fizic&#x103; &#x15f;i limb&#x103; german&#x103;</strong> &mdash; activitate s&#x103;pt&#x103;m&#xe2;nal&#x103; de aprofundare &#x15f;i experimentare bilingv&#x103;</div>
+      </li>
+      <li class="act-item">
+        <div class="act-num">b</div>
+        <div class="act-text"><strong>Concursul de fizic&#x103; experimental&#x103; &bdquo;Experimente Altfel&rdquo;</strong> &mdash; organizat &#xee;n cadrul s&#x103;pt&#x103;m&#xe2;nii &bdquo;&#x15e;coala Altfel: S&#x103; &#x15f;tii mai multe, s&#x103; fii mai bun!&rdquo;</div>
+      </li>
+      <li class="act-item">
+        <div class="act-num">c</div>
+        <div class="act-text">
+          <strong>Expozi&#x21b;ia interactiv&#x103; &bdquo;Mathematik zum Anfassen&rdquo;</strong> (&bdquo;Simte matematica&rdquo;) &mdash; organizat&#x103; de Institutul Mathematikum din Gie&#xdf;en, Germania, prezentat&#x103; la <em>Muzeul Na&#x21b;ional Tehnic &bdquo;Dimitrie Leonida&rdquo;</em> din Bucure&#x15f;ti, <strong>6&ndash;24 noiembrie 2013</strong>
+        </div>
+      </li>
+      <li class="act-item">
+        <div class="act-num">d</div>
+        <div class="act-text">
+          <strong>Expozi&#x21b;ia &bdquo;Bilder aus der Wissenschaft&rdquo;</strong> (&bdquo;Imagini din lumea &#x15f;tiin&#x21b;ei&rdquo;) &mdash; organizat&#x103; de Societatea &#x15f;tiin&#x21b;ific&#x103; <em>Max Planck</em> din Germania, expus&#x103; la <em>Muzeul Olteniei &mdash; Sec&#x21b;ia de &#x15e;tiin&#x21b;ele naturii</em>; vernisajul a avut loc pe <strong>5 mai 2015</strong>, &#xee;n prezen&#x21b;a: Andreea Wegener (Max Planck Gesellschaft, M&uuml;nchen), Uwe Koch (ata&#x15f;at cultural, Ambasada Germaniei) &#x15f;i Christa Ganterer (dir. adj. Goethe Institut Bucure&#x15f;ti)
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="proj-section">
+    <div class="sec-label">Echipa proiectului</div>
+    <div class="lab-team-grid">
+      <div class="lab-team-card">
+        <div class="team-avatar">LI</div>
+        <div class="team-name">Prof. Liviu Ionescu</div>
+        <div class="team-role">Fizic&#x103; &mdash; coordonator</div>
+      </div>
+      <div class="lab-team-card">
+        <div class="team-avatar">DC</div>
+        <div class="team-name">Prof. Daniela Chilom</div>
+        <div class="team-role">Limb&#x103; german&#x103;</div>
+      </div>
+      <div class="lab-team-card">
+        <div class="team-avatar">LD</div>
+        <div class="team-name">L&#x103;cr&#x103;mioara Demetrescu</div>
+        <div class="team-role">Ing. laborant</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="sec-label">Documente</div>
+    <div class="doc-list">
+      <a href="fizicagermana.pdf" class="proj-doc" target="_blank">
+        <div class="doc-ico"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div class="doc-info"><div class="doc-name">Prezentare proiect Fizic&#x103; &amp; German&#x103;</div><div class="doc-meta">PDF &middot; Descriere activit&#x103;&#x21b;i &#x15f;i expozi&#x21b;ii</div></div>
+        <span class="doc-arr"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </a>
+    </div>
+  </div>
+
+</main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-name">Colegiul Național Carol I</div>
+      <div class="footer-tagline">Fondat în 1826 · Craiova, România</div>
+      <div class="footer-contact">
+        <span>Str. Ioan Maiorescu nr. 2</span>
+        <span>200418, Dolj</span>
+        <span>Tel: 0251 413 230</span>
+        <span><a href="mailto:office@cnc.ro">office@cnc.ro</a></span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Colegiu</div>
+      <a href="despre-istoric.html">Istoric și tradiție</a>
+      <a href="conducere.html">Echipa de conducere</a>
+      <a href="consiliu-administratie.html">Consiliul de administrație</a>
+      <a href="consiliu-profesoral.html">Consiliul profesoral</a>
+      <a href="oferta-educationala.html">Ofertă educațională</a>
+      <a href="comisii.html">Comisii</a>
+      <a href="consiliu-elevi.html">Consiliul elevilor</a>
+      <a href="interes-public.html">Informații de interes public</a>
+      <a href="regulamente.html">Legislații</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Navigare</div>
+      <a href="index.html">Acasă</a>
+      <a href="admitere-examene.html">Admitere și examene</a>
+      <a href="activitati-dotari.html">Activități și Dotări</a>
+      <a href="stiri.html">Știri</a>
+      <a href="secretariat.html">Secretariat</a>
+      <a href="<div class="footer-col-title"><a href="<div class="footer-col-title"><a href="<div class="footer-col-title"><a href="<div class="footer-col-title"><a href="program-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html"><div class="footer-col-title"><a href="<div class="footer-col-title"><a href="<div class="footer-col-title"><a href="<div class="footer-col-title"><a href="program-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">Bicentenar 1826–2026</a></div>m Bicentenar 2026</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title"><a href="program-bicentenar.html">Bicentenar 1826–2026</a></div>
+      <a href="<div class="footer-col-title"><a href="<div class="footer-col-title"><a href="<div class="footer-col-title"><a href="<div class="footer-col-title"><a href="program-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html"><div class="footer-col-title"><a href="<div class="footer-col-title"><a href="<div class="footer-col-title"><a href="<div class="footer-col-title"><a href="program-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">Bicentenar 1826–2026</a></div>m-bicentenar.html">Bicentenar 1826–2026</a></div>m aniversar</a>
+      <a href="despre-istoric.html">Istoria colegiului</a>
+      <div class="footer-copy">© 2026 Colegiul Național Carol I Craiova. Toate drepturile rezervate.</div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  document.querySelectorAll('.sidebar-nav li.has-sub>a').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      var li=this.closest('li.has-sub'),was=li.classList.contains('open');
+      document.querySelectorAll('.sidebar-nav li.has-sub').forEach(function(x){x.classList.remove('open');});
+      if(!was)li.classList.add('open');
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  var burger = document.getElementById('navBurger');
+  var menu   = document.getElementById('mobileMenu');
+  if (!burger || !menu) return;
+
+  burger.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  // close on outside click / scroll
+  document.addEventListener('click', function(e){
+    if (!menu.contains(e.target) && !burger.contains(e.target) && menu.classList.contains('open')){
+      menu.classList.remove('open');
+      burger.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // sub-menu toggle
+  document.querySelectorAll('.mm-has-sub > a').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var li = a.parentElement;
+      li.classList.toggle('open');
+    });
+  });
+})();
+</script>
+<script>
+(function() {
+  const svg   = document.getElementById('logoSvg');
+  const grad  = document.getElementById('logo-shimmer');
+
+  // Gradient band vector: diagonal ~35deg, half-length = 55 viewBox units
+  // At any center (cx, cy), we set:
+  //   x1 = cx - dx, y1 = cy - dy
+  //   x2 = cx + dx, y2 = cy + dy
+  const VB_W = 216.86, VB_H = 34.36;
+
+  // Current animated center
+  let cx = -120, cy = 200; // off-screen start
+  let tcx = cx, tcy = cy;
+  let glowOpacity = 0, targetGlow = 0;
+  let isHovering = false;
+  let raf = null;
+
+  const goldIds = ['ga','gb','gc','gd','ge'];
+  // Base gold colors at full glow
+  const goldColors = ['#0f385a','#c9860a','#ffd000','#c9860a','#0f385a'];
+  // At glow=0 all are navy; at glow=1 they are gold
+  function lerpColor(t) {
+    // lerp each gold stop between navy and its target color
+    // use opacity trick via the stop-color only — no stop-opacity
+    // actually simplest: just setAttribute on stop-color won't interpolate easily
+    // Instead: just set gradient x1/y1/x2/y2, glow controls stop offsets tightening
+    // Simplest correct approach: one stop-opacity on a wrapper
+  }
+
+  function mix(hex, t) {
+    const navy = [15, 56, 90];
+    const r  = parseInt(hex.slice(1,3),16);
+    const gv = parseInt(hex.slice(3,5),16);
+    const b  = parseInt(hex.slice(5,7),16);
+    const nr = Math.round(navy[0] + (r  - navy[0]) * t);
+    const ng = Math.round(navy[1] + (gv - navy[1]) * t);
+    const nb = Math.round(navy[2] + (b  - navy[2]) * t);
+    return '#' + [nr,ng,nb].map(v=>v.toString(16).padStart(2,'0')).join('');
+  }
+
+  function applyGrad() {
+    const g = glowOpacity;
+    // Move radial gradient center to cursor
+    grad.setAttribute('cx', cx.toFixed(2));
+    grad.setAttribute('cy', cy.toFixed(2));
+    grad.setAttribute('fx', cx.toFixed(2));
+    grad.setAttribute('fy', cy.toFixed(2));
+
+    // Center: bright gold → mid: amber → outer: navy
+    document.getElementById('gc').setAttribute('stop-color', mix('#ffd000', g));
+    document.getElementById('gb').setAttribute('stop-color', mix('#c9860a', g));
+    document.getElementById('ga').setAttribute('stop-color', mix('#2a4e6a', g));
+  }
+
+  function lerp(a,b,t){ return a+(b-a)*t; }
+
+  function tick() {
+    const posEase  = isHovering ? 0.1 : 0.04;
+    const glowEase = isHovering ? 0.07 : 0.04;
+
+    cx = lerp(cx, tcx, posEase);
+    cy = lerp(cy, tcy, posEase);
+    glowOpacity = lerp(glowOpacity, targetGlow, glowEase);
+
+    applyGrad();
+
+    const stillMoving = Math.abs(cx-tcx)>0.05 || Math.abs(cy-tcy)>0.05
+                     || Math.abs(glowOpacity-targetGlow)>0.002;
+    if (stillMoving) raf = requestAnimationFrame(tick);
+    else raf = null;
+  }
+
+  function startTick() { if (!raf) raf = requestAnimationFrame(tick); }
+
+  // Mouse tracking
+  svg.addEventListener('mousemove', function(e) {
+    const rect = svg.getBoundingClientRect();
+    tcx = ((e.clientX - rect.left)  / rect.width)  * VB_W;
+    tcy = ((e.clientY - rect.top)   / rect.height) * VB_H;
+    targetGlow = 1;
+    isHovering = true;
+    startTick();
+  });
+
+  svg.addEventListener('mouseleave', function() {
+    targetGlow = 0;
+    isHovering = false;
+    startTick();
+  });
+
+  // Auto sweep on load: diagonal from bottom-left to top-right
+  (function autoSweep() {
+    const DUR = 7500;
+    const DELAY = 600;
+    let startTime = null;
+
+    function sweep(now) {
+      if (isHovering) return; // user took over
+      if (!startTime) startTime = now;
+      const elapsed = now - startTime - DELAY;
+      if (elapsed < 0) { requestAnimationFrame(sweep); return; }
+      const t = Math.min(elapsed / DUR, 1);
+      // Bell opacity
+      const op = Math.sin(Math.PI * t);
+      // Position: bottom-left off-screen → top-right off-screen
+      const px = -30  + t * (VB_W + 60);
+      const py = VB_H * 0.5;
+      cx = px; cy = py;
+      tcx = px; tcy = py;
+      glowOpacity = op;
+      targetGlow = op;
+      applyGrad();
+      if (t < 1) requestAnimationFrame(sweep);
+    }
+    requestAnimationFrame(sweep);
+  })();
+
+})();
+</script>
+</body>
+</html>

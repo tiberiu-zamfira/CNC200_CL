@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Bicentenar 1826–2026 · Colegiul Național Carol I Craiova</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="global.css" />
+  <style>
+/* ─── VARIABILE (inline fallback) ──────────────────────────────────────── */
+:root {
+  --navy:    #1a3254; --navy-dk: #0f1f35; --navy-md: #1e3a5f; --navy2: #0f1f35;
+  --gold:    #c9a44c; --gold-lt: #e2c47a; --gold-dk: #a07828; --gold2: #b8923e;
+  --gold-bg: #c9a962; --cream: #f5f0e8; --cream2: #ede8dc; --white: #ffffff;
+  --text: #1a1a1a; --muted: #666666; --site-max: 1100px; --site-pad: 60px;
+  --cat-art: #7b5ea7; --cat-sport: #2e7d5e; --cat-acad: #1a5276;
+  --cat-cultural: #b5400b; --cat-social: #6b6b00;
+}
+
+.hero {
+      background: var(--navy-dk);
+      position: relative; overflow: hidden;
+      padding: 100px 60px 80px;
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center;
+    }
+    /* decorative rings */
+    .hero::before, .hero::after {
+      content: ''; position: absolute; border-radius: 50%;
+      border: 1px solid rgba(201,164,76,.12);
+      pointer-events: none;
+    }
+    .hero::before { width: 700px; height: 700px; top: -250px; right: -200px; }
+    .hero::after  { width: 500px; height: 500px; bottom: -200px; left: -150px; }
+
+    .hero-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: .3em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 20px; animation: fadeUp .7s ease both;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(44px, 6vw, 72px); font-weight: 700;
+      color: var(--white); line-height: 1.1; margin-bottom: 20px;
+      animation: fadeUp .7s .1s ease both;
+    }
+    .hero h1 em { color: var(--gold); font-style: italic; }
+    .hero-sub {
+      font-size: 14px; font-weight: 400; color: rgba(255,255,255,.55);
+      letter-spacing: .08em; margin-bottom: 56px;
+      animation: fadeUp .7s .2s ease both;
+    }
+
+    /* stats row */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      border: 1px solid rgba(201,164,76,.3); border-radius: 4px;
+      overflow: hidden; animation: fadeUp .7s .3s ease both;
+      width: 100%; max-width: 640px;
+    }
+    .hero-stat {
+      padding: 20px 28px; text-align: center;
+      border-right: 1px solid rgba(201,164,76,.2);
+    }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px; font-weight: 700; color: var(--gold);
+      display: block; line-height: 1;
+    }
+    .hero-stat .lbl {
+      font-size: 10px; font-weight: 600; letter-spacing: .18em;
+      text-transform: uppercase; color: rgba(255,255,255,.45);
+      display: block; margin-top: 6px;
+    }
+
+    /* gold divider line */
+    .hero-line {
+      width: 60px; height: 2px; background: var(--gold);
+      margin: 56px auto 0; opacity: .5;
+      animation: fadeUp .7s .4s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ══════════════════════════════════════════
+       FEATURED EVENTS (cards with image)
+    ══════════════════════════════════════════ */
+    .featured {
+      background: var(--cream);
+      padding: 80px 60px;
+    }
+    .section-label {
+      font-size: 10px; font-weight: 800; letter-spacing: .3em;
+      text-transform: uppercase; color: var(--gold-dk);
+      margin-bottom: 10px; display: block; text-align: center;
+    }
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px; font-weight: 700; font-style: italic;
+      color: var(--navy); margin-bottom: 48px; text-align: center;
+    }
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px; align-items: stretch;
+      max-width: var(--site-max); margin: 0 auto;
+    }
+    .featured-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 14px;
+    }
+
+    /* card base */
+    .feat-card {
+      background: var(--white);
+      border-radius: 6px; overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform .3s ease, box-shadow .3s ease;
+      cursor: pointer;
+    }
+    .feat-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(26,50,84,.13); }
+
+    /* poster — 5:7 portrait for large card */
+    .feat-card.large .poster {
+      aspect-ratio: 5 / 7;
+      background: var(--navy);
+      position: relative; overflow: hidden;
+      display: flex; align-items: flex-end;
+      flex-shrink: 0;
+    }
+    /* poster — 7:5 landscape for small cards */
+    .feat-card.small .poster {
+      aspect-ratio: 7 / 5;
+      background: var(--navy);
+      position: relative; overflow: hidden;
+      display: flex; align-items: flex-end;
+      flex-shrink: 0;
+    }
+    .poster-bg {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .poster-content {
+      position: relative; z-index: 2;
+      padding: 20px; width: 100%;
+      background: linear-gradient(to top, rgba(10,20,40,.85) 0%, transparent 100%);
+    }
+    .poster-date-chip {
+      display: inline-block;
+      background: var(--gold); color: var(--navy-dk);
+      font-size: 10px; font-weight: 800; letter-spacing: .12em;
+      text-transform: uppercase; padding: 4px 10px; border-radius: 2px;
+      margin-bottom: 8px;
+    }
+    .poster-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px; font-weight: 700; font-style: italic;
+      color: var(--white); line-height: 1.3;
+    }
+    .feat-card.large .poster-title { font-size: 26px; }
+
+    .feat-body { padding: 16px 18px 18px; flex: 1; }
+    .feat-card.small .feat-body { padding: 12px 14px 14px; }
+    .feat-cat {
+      font-size: 9px; font-weight: 800; letter-spacing: .2em;
+      text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;
+    }
+    .feat-cat::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+    .feat-body h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px; font-weight: 600;
+      color: var(--navy); margin-bottom: 10px; line-height: 1.3;
+    }
+    .feat-card.large .feat-body h4 { font-size: 22px; }
+    .feat-card.small .feat-body h4 { font-size: 13px; margin-bottom: 6px; }
+    .feat-meta { font-size: 12px; color: var(--muted); line-height: 1.8; }
+    .feat-card.small .feat-meta { font-size: 11px; line-height: 1.6; }
+    .feat-meta strong { color: var(--text); font-weight: 600; }
+
+    /* poster illustrations */
+    .poster-art-vernisaj {
+      background: linear-gradient(135deg, #1a3254 0%, #2d5177 50%, #0f1f35 100%);
+    }
+    .poster-art-gala {
+      background: linear-gradient(160deg, #0f1f35 0%, #1a3254 60%, #c9a44c22 100%);
+    }
+    .poster-art-absolvire {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2e6b5e 100%);
+    }
+    .poster-art-spectacol {
+      background: linear-gradient(160deg, #3d1f4e 0%, #1a3254 100%);
+    }
+
+    /* SVG decorations inside posters */
+    .poster-deco {
+      width: 80%; max-width: 160px; opacity: .25;
+    }
+
+    /* ══════════════════════════════════════════
+       STICKY MONTH NAV
+    ══════════════════════════════════════════ */
+    .month-nav {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,.08);
+      position: sticky; top: 61px; z-index: 100;
+      display: flex; justify-content: center;
+      gap: 0;
+    }
+    .month-tab {
+      padding: 18px 48px;
+      font-size: 12px; font-weight: 700; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none; cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: color .2s, border-color .2s;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .month-tab .count {
+      background: var(--cream2); color: var(--navy);
+      font-size: 10px; font-weight: 700;
+      width: 20px; height: 20px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .month-tab.active, .month-tab:hover {
+      color: var(--navy); border-bottom-color: var(--gold);
+    }
+    .month-tab.active .count { background: var(--gold); color: var(--white); }
+
+    /* legend */
+    .legend {
+      background: var(--cream);
+      padding: 16px 60px;
+      display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;
+    }
+    .legend-label { font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-right: 8px; }
+    .legend-item {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 500; color: var(--muted);
+    }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+    /* ══════════════════════════════════════════
+       TIMELINE
+    ══════════════════════════════════════════ */
+    .timeline-section { background: var(--white); padding: 0 60px 100px; }
+
+    .month-block { padding-top: 70px; }
+    .month-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px; font-weight: 700; font-style: italic;
+      color: var(--cream2);
+      letter-spacing: -.01em;
+      margin-bottom: 0;
+      text-align: center;
+      user-select: none;
+    }
+
+    /* the timeline itself */
+    .tl {
+      position: relative;
+      padding-top: 20px;
+      max-width: var(--site-max); margin: 0 auto;
+    }
+    /* center line */
+    .tl::before {
+      content: ''; position: absolute;
+      left: 50%; top: 0; bottom: 0;
+      width: 1px; background: linear-gradient(to bottom, transparent, var(--gold) 5%, var(--gold) 95%, transparent);
+      transform: translateX(-50%);
+    }
+
+    .tl-item {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      gap: 0;
+      margin-bottom: 32px;
+      opacity: 1; transform: none;
+    }
+    .tl-item.visible { opacity: 1; transform: translateY(0); }
+
+    /* left-side items */
+    .tl-item.left .tl-card  { grid-column: 1; grid-row: 1; text-align: right; padding-right: 36px; }
+    .tl-item.left .tl-dot   { grid-column: 2; grid-row: 1; }
+    .tl-item.left .tl-empty { grid-column: 3; grid-row: 1; }
+
+    /* right-side items */
+    .tl-item.right .tl-empty { grid-column: 1; grid-row: 1; }
+    .tl-item.right .tl-dot   { grid-column: 2; grid-row: 1; }
+    .tl-item.right .tl-card  { grid-column: 3; grid-row: 1; padding-left: 36px; }
+
+    .tl-dot {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: flex-start;
+      padding-top: 4px; position: relative; z-index: 2;
+    }
+    .tl-dot-inner {
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--gold); border: 3px solid var(--white);
+      box-shadow: 0 0 0 1px var(--gold);
+      flex-shrink: 0;
+    }
+    .tl-dot-line {
+      width: 1px; flex: 1; background: rgba(201,164,76,.25);
+      margin-top: 4px;
+    }
+
+    .tl-card {
+      display: flex; flex-direction: column;
+    }
+
+    /* the card inner box */
+    .tl-box {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 6px;
+      padding: 20px 22px;
+      position: relative; z-index: 1;
+      transition: box-shadow .25s, border-color .25s, transform .25s;
+      cursor: default;
+    }
+    .tl-item:hover .tl-box {
+      box-shadow: 0 8px 32px rgba(26,50,84,.1);
+      border-color: rgba(201,164,76,.35);
+      transform: translateY(-2px);
+    }
+
+    .tl-date {
+      font-size: 11px; font-weight: 700; letter-spacing: .12em;
+      color: var(--gold-dk); text-transform: uppercase; margin-bottom: 6px;
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    }
+    .tl-item.right .tl-date { flex-direction: row; }
+    .tl-item.left  .tl-date { flex-direction: row-reverse; justify-content: flex-end; }
+
+    .tl-time {
+      background: var(--navy); color: var(--white);
+      font-size: 10px; font-weight: 700; letter-spacing: .08em;
+      padding: 2px 8px; border-radius: 2px;
+    }
+
+    .tl-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px; font-weight: 600;
+      color: var(--navy); line-height: 1.35; margin-bottom: 8px;
+    }
+    .tl-location {
+      font-size: 12px; color: var(--muted);
+      display: flex; align-items: flex-start; gap: 5px;
+      line-height: 1.5;
+    }
+    .tl-location::before { content: '📍'; font-size: 11px; flex-shrink: 0; margin-top: 1px; }
+    .tl-item.left .tl-location { flex-direction: row-reverse; }
+    .tl-cat-tag {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 9px; font-weight: 700; letter-spacing: .15em;
+      text-transform: uppercase; margin-top: 12px;
+      padding: 3px 8px; border-radius: 2px;
+      background: var(--cream2);
+    }
+    .tl-cat-tag .dot { width: 6px; height: 6px; border-radius: 50%; }
+
+    /* multi-day span */
+    .tl-span {
+      display: inline-block;
+      font-size: 10px; font-weight: 700; letter-spacing: .06em;
+      background: rgba(201,164,76,.15); color: var(--gold-dk);
+      padding: 2px 8px; border-radius: 10px; margin-top: 6px;
+    }
+
+    /* special: featured star */
+    .tl-box.featured-item {
+      border-color: var(--gold); background: linear-gradient(135deg, #fff 0%, #fdf9f0 100%);
+    }
+    .featured-badge {
+      font-size: 9px; font-weight: 800; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--gold-dk);
+      background: rgba(201,164,76,.15);
+      padding: 3px 8px; border-radius: 2px;
+      display: inline-block; margin-bottom: 8px;
+    }
+
+    /* ══════════════════════════════════════════
+       CTA BANNER
+    ══════════════════════════════════════════ */
+    .cta-banner {
+      background: var(--navy);
+      padding: 80px 60px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '200'; position: absolute;
+      font-family: 'Playfair Display', serif;
+      font-size: 320px; font-weight: 700; font-style: italic;
+      color: rgba(255,255,255,.03); pointer-events: none;
+      top: 50%; left: 50%; transform: translate(-50%, -50%);
+      white-space: nowrap;
+    }
+    .cta-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px; font-weight: 700; font-style: italic;
+      color: var(--white); margin-bottom: 14px; position: relative;
+    }
+    .cta-banner p {
+      font-size: 14px; color: rgba(255,255,255,.55);
+      max-width: 500px; margin: 0 auto 36px; line-height: 1.8; position: relative;
+    }
+    .cta-btn {
+      display: inline-block; background: var(--gold); color: var(--navy-dk);
+      font-size: 12px; font-weight: 800; letter-spacing: .12em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 16px 44px; border-radius: 2px;
+      transition: background .2s; position: relative;
+    }
+    .cta-btn:hover { background: var(--gold-lt); }
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    footer {
+      background: var(--navy-dk);
+      padding: 40px var(--site-pad);
+    }
+    .footer-inner {
+      max-width: var(--site-max); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 20px;
+    }
+    .footer-brand { font-size: 11px; font-weight: 700; letter-spacing: .06em; color: rgba(255,255,255,.4); text-transform: uppercase; }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,.25); }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════ */
+    
+
+    /* ── Tablet ≤ 1000px ── */
+    @media (max-width: 1000px) {
+      .featured-grid { grid-template-columns: 1fr; }
+      .featured-right { grid-template-columns: 1fr 1fr; }
+      .hero { padding: 60px 32px 40px; }
+      .timeline-section { padding: 0 32px 60px; }
+      .month-nav { padding: 0 32px; }
+      .tl-item { grid-template-columns: 1fr; }
+      .tl-item.left .tl-card, .tl-item.right .tl-card { grid-column: 1; grid-row: 1; text-align: left; padding: 0; }
+      .tl-item .tl-dot, .tl-item .tl-empty { display: none; }
+      .timeline::before { display: none; }
+    }
+    /* ── Mobile ≤ 750px ── */
+    @media (max-width: 750px) {
+      .hero { padding: 40px 20px 32px; }
+      .hero h1 { font-size: 32px; }
+      .hero .subtitle { font-size: 14px; }
+      .featured-grid { gap: 24px; }
+      .featured-right { grid-template-columns: 1fr; }
+      .timeline-section { padding: 0 20px 40px; }
+      .month-nav { padding: 0 20px; gap: 4px; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+      .month-tab { font-size: 11px; padding: 8px 10px; white-space: nowrap; }
+      .tl-card { padding: 20px 16px; }
+      .featured-sym { text-align: center; margin: 0 auto 28px; }
+      .featured-left { text-align: center; }
+    }
+
+      .featured-right { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+      .hero h1 { font-size: 36px; }
+    }
+      .featured-sym { text-align: center; margin-bottom: 28px; }
+    .featured-sym-img { height: 60px; width: auto; display: inline-block; }
+  
+    /* ── Mobile burger ── */
+    .nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;border-radius:4px;transition:background .15s;flex-shrink:0}
+    .nav-burger:hover{background:var(--cream)}
+    .nav-burger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:transform .25s,opacity .25s,width .25s;transform-origin:center}
+    .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-burger.open span:nth-child(2){opacity:0;width:0}
+    .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;z-index:199;overflow-y:auto;background:var(--white);border-top:3px solid var(--gold);padding:16px 0 40px;transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1)}
+    .mobile-menu.open{transform:translateX(0)}
+    .mobile-menu-inner{max-width:var(--site-max);margin:0 auto;padding:0 var(--site-pad)}
+    .mobile-menu ul{list-style:none;margin:0;padding:0}
+    .mobile-menu>.mobile-menu-inner>ul>li>a{display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:15px;font-weight:700;color:var(--navy);text-decoration:none;border-bottom:1px solid rgba(26,50,84,.08);letter-spacing:.02em}
+    .mobile-menu>.mobile-menu-inner>ul>li>a:hover{color:var(--gold)}
+    .mm-caret{font-size:10px;opacity:.5;transition:transform .2s}
+    .mm-has-sub.open .mm-caret{transform:rotate(180deg)}
+    .mm-sub{display:none;padding:4px 0 8px 16px;border-left:2px solid var(--gold);margin:0 0 8px}
+    .mm-has-sub.open .mm-sub{display:block}
+    .mm-sub li a{display:block;padding:9px 0;font-size:13px;font-weight:500;color:var(--navy);text-decoration:none;border-bottom:1px solid rgba(26,50,84,.05)}
+    .mm-sub li a:hover{color:var(--gold)}
+    .mm-sub .dd-bicentenar a{color:var(--gold)!important;font-weight:700;letter-spacing:.03em}
+    @media(max-width:860px){.navbar-nav{display:none}.nav-burger{display:flex}.mobile-menu{display:block}}
+
+  </style>
+</head>
+<body>
+<!-- ── NAVBAR ──────────────────────────────────────────────────── -->
+<nav class="navbar">
+  <div class="navbar-inner">
+  <a href="index.html" class="navbar-logo-img" id="logoWrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216.86 34.36" height="31" width="auto" style="display:block;" id="logoSvg">
+  <defs>
+    <!--
+      Simple navy→gold→navy gradient in userSpaceOnUse.
+      The entire gradient vector is positioned so the gold center
+      sits at the cursor position. JS just updates x1/y1/x2/y2.
+      Band half-width ~35 viewBox units at 35deg diagonal.
+    -->
+    <radialGradient id="logo-shimmer" gradientUnits="userSpaceOnUse"
+      cx="-200" cy="200" r="60" fx="-200" fy="200">
+      <stop id="gc" offset="0%"   stop-color="#0f385a"/>
+      <stop id="gb" offset="25%"  stop-color="#0f385a"/>
+      <stop id="ga" offset="55%"  stop-color="#0f385a"/>
+      <stop offset="100%" stop-color="#0f385a"/>
+    </radialGradient>
+  </defs>
+  <g id="Layer_2-2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <path fill="url(#logo-shimmer)" d="M0,8.07C0,3.49,2.85,0,7.4,0c3.8,0,6.04,2.26,6.36,5.2h-3.11c-.28-1.55-1.44-2.57-3.26-2.57-2.85,0-4.21,2.37-4.21,5.43s1.64,5.41,4.23,5.41c1.83,0,3.13-1.1,3.32-2.72h3.06c-.09,1.36-.67,2.67-1.7,3.64-1.06.99-2.54,1.64-4.68,1.64-4.33,0-7.42-3.34-7.42-7.98Z"/>
+        <path fill="url(#logo-shimmer)" d="M15.18,8.04c0-4.62,2.89-8.04,7.44-8.04s7.42,3.43,7.42,8.04-2.87,8.02-7.42,8.02-7.44-3.41-7.44-8.02ZM26.85,8.04c0-3.08-1.38-5.48-4.21-5.48s-4.27,2.39-4.27,5.48,1.44,5.46,4.27,5.46,4.21-2.39,4.21-5.46Z"/>
+        <path fill="url(#logo-shimmer)" d="M32.18.3h3.13v12.81h7.25v2.61h-10.37V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M44.66.3h11.34v2.63h-8.22v3.45h7.2v2.57h-7.2v4.16h8.28v2.61h-11.41V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M69.31,13.65h-.04c-1.06,1.77-2.5,2.39-4.33,2.39-2.33,0-4.14-.84-5.41-2.24-1.27-1.42-2.01-3.41-2.01-5.74,0-2.57.91-4.81,2.52-6.3,1.25-1.14,2.89-1.77,4.96-1.77,3.88,0,6.1,2.14,6.6,5.15h-3.06c-.35-1.49-1.49-2.57-3.47-2.57-2.91,0-4.36,2.42-4.36,5.48s1.66,5.46,4.31,5.46c2.39,0,3.97-1.79,3.97-3.49v-.09h-3.71v-2.42h6.49v8.2h-2.35l-.11-2.07Z"/>
+        <path fill="url(#logo-shimmer)" d="M74.4.3h3.13v15.42h-3.13V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M80.22,10.76V.3h3.13v10.46c0,1.6.8,2.72,2.89,2.72,1.98,0,2.91-1.16,2.91-2.76V.3h3.13v10.46c0,3.3-2.03,5.22-5.97,5.22s-6.08-1.88-6.08-5.22Z"/>
+        <path fill="url(#logo-shimmer)" d="M94.95.3h3.13v12.81h7.25v2.61h-10.37V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M111.49.3h3.17l5.13,8.61c.5.84,1.08,2.16,1.08,2.16h.04s-.09-1.6-.09-2.67V.3h3.08v15.42h-3.02l-5.26-8.52c-.5-.82-1.1-2.14-1.1-2.14h-.04s.09,1.62.09,2.7v7.96h-3.08V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M130.97.3h3.24l5.43,15.42h-3.26l-1.04-3.28h-5.56l-1.01,3.28h-3.17l5.37-15.42ZM130.52,10.05h4.08l-1.38-4.44c-.26-.82-.63-2.37-.63-2.37h-.04s-.39,1.55-.65,2.37l-1.38,4.44Z"/>
+        <path fill="url(#logo-shimmer)" d="M139.92.3h12.4v2.63h-4.64v12.79h-3.13V2.93h-4.64V.3ZM144.75,20.45c.63-.15,1.34-.52,1.34-1.38h-1.29v-2.31h2.67v2.09c0,1.66-1.32,2.39-2.72,2.54v-.95Z"/>
+        <path fill="url(#logo-shimmer)" d="M154.34.3h3.13v15.42h-3.13V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M159.63,8.04c0-4.62,2.89-8.04,7.44-8.04s7.42,3.43,7.42,8.04-2.87,8.02-7.42,8.02-7.44-3.41-7.44-8.02ZM171.3,8.04c0-3.08-1.38-5.48-4.21-5.48s-4.27,2.39-4.27,5.48,1.44,5.46,4.27,5.46,4.21-2.39,4.21-5.46Z"/>
+        <path fill="url(#logo-shimmer)" d="M176.62.3h3.17l5.13,8.61c.5.84,1.08,2.16,1.08,2.16h.04s-.09-1.6-.09-2.67V.3h3.08v15.42h-3.02l-5.26-8.52c-.5-.82-1.1-2.14-1.1-2.14h-.04s.09,1.62.09,2.7v7.96h-3.08V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M196.1.3h3.24l5.43,15.42h-3.26l-1.04-3.28h-5.56l-1.01,3.28h-3.17l5.37-15.42ZM195.64,10.05h4.08l-1.38-4.44c-.26-.82-.63-2.37-.63-2.37h-.04s-.39,1.55-.65,2.37l-1.38,4.44Z"/>
+        <path fill="url(#logo-shimmer)" d="M206.49.3h3.13v12.81h7.25v2.61h-10.37V.3Z"/>
+        <path fill="url(#logo-shimmer)" d="M8.93,34.31C3.77,34.31.24,31.27.24,26.18s3.97-8.17,8.52-8.17c1.92,0,3.58.47,4.83,1.47l.54-1.49h1.92v6.36h-2.14c-.24-2.76-2.03-4.4-4.51-4.4-3.11,0-5.07,2.33-5.07,6.23s1.83,6.19,5.07,6.19c2.7,0,4.51-1.4,4.51-4.38h2.33c.04,4.1-3.02,6.32-7.31,6.32Z"/>
+        <path fill="url(#logo-shimmer)" d="M16.91,33.88v-1.57c1.75-.06,2.01.06,3.45-3.54l4.12-10.29h3.43l4.1,10.5c1.08,2.78,1.34,3.23,3.28,3.32v1.57h-8.63v-1.57c2.14-.13,1.88-.52,1.1-2.91h-5.31c-.86,2.39-.75,2.78,1.4,2.91v1.57h-6.94ZM27.19,27.67l-1.92-5.97-2.2,5.97h4.12Z"/>
+        <path fill="url(#logo-shimmer)" d="M36.25,33.88v-1.57c2.35-.06,2.42-.17,2.42-3.32v-5.18c0-3.56-.06-3.73-2.42-3.77v-1.55h8.32c4.49,0,6.77.69,6.77,3.88,0,2.65-1.92,3.84-4.96,4.05v.11c1.01.19,2.03.6,2.76,1.42,1.25,1.4,1.19,4.14,2.31,4.14.58,0,.78-.56.78-1.4v-.82h1.23v.99c0,2.16-1.23,3.45-3.56,3.45-1.55,0-2.39-.43-2.87-1.08-1.47-2.09.71-6.38-4.44-6.53v2.29c0,3.15.06,3.26,2.42,3.32v1.57h-8.76ZM42.59,24.91h1.57c2.07,0,3.15-.71,3.15-2.31,0-1.75-1.08-2.31-3.15-2.31h-1.57v4.62Z"/>
+        <path fill="url(#logo-shimmer)" d="M63.53,34.36c-4.74,0-8.73-3.13-8.73-8.17s3.99-8.17,8.73-8.17,8.86,3.11,8.86,8.17-4.03,8.17-8.86,8.17ZM63.6,32.42c2.98,0,4.7-2.26,4.7-6.23s-1.73-6.23-4.7-6.23-4.7,2.29-4.7,6.23,1.73,6.23,4.7,6.23Z"/>
+        <path fill="url(#logo-shimmer)" d="M73.91,33.88v-1.57c2.29-.06,2.42-.13,2.42-3.32v-4.74c0-4.16-.06-4.12-2.42-4.21v-1.55h8.99v1.55c-2.39.09-2.65.04-2.65,4.21v4.7c0,2.42.39,3.13,3.36,3.13h.32c2.67,0,3.69-1.81,4.27-4.66h1.79l-.45,6.47h-15.64Z"/>
+        <path fill="url(#logo-shimmer)" d="M99.44,31.14c1.94,0,2.61-.19,3.17-2.05l1.7-5.56c.67-2.18.11-2.31-1.83-2.31h-.82l.84-2.74h7.44l-.84,2.74h-.78c-1.94,0-2.63.15-3.28,2.31l-1.68,5.54c-.52,1.73-.04,2.07,1.51,2.07h1.21l-.84,2.74h-7.44l.84-2.74h.8Z"/>
+        <path fill="url(#logo-shimmer)" d="M115.72,26.23c0-4.57,2.85-8.07,7.4-8.07,3.8,0,6.04,2.26,6.36,5.2h-3.11c-.28-1.55-1.44-2.57-3.26-2.57-2.85,0-4.21,2.37-4.21,5.43s1.64,5.41,4.23,5.41c1.83,0,3.13-1.1,3.32-2.72h3.06c-.09,1.36-.67,2.67-1.7,3.64-1.06.99-2.54,1.64-4.68,1.64-4.33,0-7.42-3.34-7.42-7.98Z"/>
+        <path fill="url(#logo-shimmer)" d="M131.14,18.46h7.07c2.98,0,4.96,1.73,4.96,4.29,0,1.81-.84,3.19-2.83,3.73v.06c1.42.41,2.16,1.23,2.35,3.11.22,2.18.13,3.84.67,4.08v.15h-3c-.39-.17-.43-1.9-.56-3.56-.13-1.68-1.08-2.63-3.02-2.63h-2.52v6.19h-3.13v-15.42ZM134.27,25.28h3.32c1.7,0,2.54-.88,2.54-2.11s-.8-2.18-2.46-2.18h-3.41v4.29Z"/>
+        <path fill="url(#logo-shimmer)" d="M149.54,18.46h3.24l5.43,15.42h-3.26l-1.04-3.28h-5.56l-1.01,3.28h-3.17l5.37-15.42ZM149.08,28.21h4.08l-1.38-4.44c-.26-.82-.63-2.37-.63-2.37h-.04s-.39,1.55-.65,2.37l-1.38,4.44Z"/>
+        <path fill="url(#logo-shimmer)" d="M159.52,18.46h3.13v15.42h-3.13v-15.42Z"/>
+        <path fill="url(#logo-shimmer)" d="M164.37,26.21c0-4.62,2.89-8.04,7.44-8.04s7.42,3.43,7.42,8.04-2.87,8.02-7.42,8.02-7.44-3.41-7.44-8.02ZM176.04,26.21c0-3.08-1.38-5.48-4.21-5.48s-4.27,2.39-4.27,5.48,1.44,5.46,4.27,5.46,4.21-2.39,4.21-5.46Z"/>
+        <path fill="url(#logo-shimmer)" d="M179.04,18.46h3.28l2.72,8.93c.3,1.01.67,2.46.67,2.46h.04s.37-1.47.67-2.46l2.7-8.93h3.17l-5.2,15.42h-2.85l-5.2-15.42Z"/>
+        <path fill="url(#logo-shimmer)" d="M196.14,18.46h3.24l5.43,15.42h-3.26l-1.04-3.28h-5.56l-1.01,3.28h-3.17l5.37-15.42ZM195.69,28.21h4.08l-1.38-4.44c-.26-.82-.63-2.37-.63-2.37h-.04s-.39,1.55-.65,2.37l-1.38,4.44Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
+</a>
+  <button class="nav-burger" id="navBurger" aria-label="Meniu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="navbar-nav">
+        <li><a href="index.html" style="color:var(--gold)">Acasă</a></li>
+    <li class="has-dropdown">
+      <a href="despre-istoric.html" tabindex="0">Colegiu <span class="dd-caret">▾</span></a>
+      <ul class="dropdown">
+      <li class="dd-bicentenar"><a href="program-bicentenar.html">✦ Bicentenar 1826–2026</a></li>
+      <li><a href="conducere.html">Echipa de conducere</a></li>
+      <li><a href="consiliu-administratie.html">Consiliul de administrație</a></li>
+      <li><a href="consiliu-profesoral.html">Consiliul profesoral</a></li>
+      <li><a href="comisii.html">Comisii</a></li>
+      <li><a href="consiliu-elevi.html">Consiliul elevilor</a></li>
+      <li><a href="interes-public.html">Informații de interes public</a></li>
+      <li><a href="regulamente.html">Legislații și regulamente</a></li>
+      </ul>
+    </li>
+        <li class="has-dropdown">
+      <a href="admitere-examene.html" tabindex="0">Admitere și examene <span class="dd-caret">▾</span></a>
+      <ul class="dropdown">
+      <li><a href="inscrieri-primar.html">Înscrieri învățământ primar 2026-2027</a></li>
+      <li><a href="clasa-v.html">Clasa a V-a</a></li>
+      <li><a href="clasa-ix.html">Clasa a IX-a</a></li>
+      <li><a href="evaluare-ii-iv-vi.html">Evaluare II, IV, VI</a></li>
+      <li><a href="evaluare-nationala.html">Evaluare națională</a></li>
+      <li><a href="bacalaureat.html">Bacalaureat</a></li>
+      <li><a href="examene-internationale.html">Examene internaționale</a></li>
+      <li><a href="bacalaureat-francofon.html">Bacalaureat francofon</a></li>
+      <li><a href="transferuri.html">Transferuri</a></li>
+      </ul>
+    </li>
+        <li class="has-mega">
+      <a href="activitati-dotari.html" tabindex="0">Activități și Dotări <span class="dd-caret">▾</span></a>
+      <div class="mega-menu">
+        <div class="mega-inner">
+          <div class="mega-col">
+            <div class="mega-col-title">Activități</div>
+      <a href="proiecte-educationale.html">Proiecte educaționale</a>
+      <a href="scoala-altfel.html">Școala Altfel</a>
+      <a href="concursuri-scolare.html">Concursuri școlare</a>
+      <a href="cluburi-asociatii.html">Cluburi și Asociații</a>
+      <a href="publicatii.html">Publicații</a>
+          </div>
+          <div class="mega-col">
+            <div class="mega-col-title">Dotări</div>
+      <a href="bazin-semiolimpic.html">Bazin Semiolimpic</a>
+      <a href="biblioteca-mihail-strajan.html">Biblioteca Mihail Strajan</a>
+      <a href="cabinete-specializate.html">Cabinete specializate</a>
+      <a href="muzeul-colegiului.html">Muzeul Colegiului</a>
+      <a href="baza-sportiva.html">Bază sportivă</a>
+      <a href="sala-festivitati.html">Sală festivități</a>
+      <a href="colectii-inedite.html">Colecții inedite</a>
+          </div>
+        </div>
+      </div>
+    </li>
+        <li><a href="stiri.html">Știri</a></li>
+        <li><a href="secretariat.html">Secretariat</a></li>
+  </ul>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-inner">
+    <ul>
+      <li><a href="index.html">Acasă</a></li>
+      <li class="mm-has-sub">
+        <a href="despre-istoric.html" tabindex="0">Colegiu <span class="mm-caret">▾</span></a>
+        <ul class="mm-sub">
+          <li class="dd-bicentenar"><a href="program-bicentenar.html">✦ Bicentenar 1826–2026</a></li>
+          <li><a href="conducere.html">Echipa de conducere</a></li>
+          <li><a href="consiliu-administratie.html">Consiliul de administrație</a></li>
+          <li><a href="consiliu-profesoral.html">Consiliul profesoral</a></li>
+          <li><a href="comisii.html">Comisii</a></li>
+          <li><a href="consiliu-elevi.html">Consiliul elevilor</a></li>
+          <li><a href="interes-public.html">Informații de interes public</a></li>
+          <li><a href="regulamente.html">Legislații și regulamente</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+      <a href="admitere-examene.html" tabindex="0">Admitere și examene <span class="dd-caret">▾</span></a>
+      <ul class="dropdown">
+      <li><a href="inscrieri-primar.html">Înscrieri învățământ primar 2026-2027</a></li>
+      <li><a href="clasa-v.html">Clasa a V-a</a></li>
+      <li><a href="clasa-ix.html">Clasa a IX-a</a></li>
+      <li><a href="evaluare-ii-iv-vi.html">Evaluare II, IV, VI</a></li>
+      <li><a href="evaluare-nationala.html">Evaluare națională</a></li>
+      <li><a href="bacalaureat.html">Bacalaureat</a></li>
+      <li><a href="examene-internationale.html">Examene internaționale</a></li>
+      <li><a href="bacalaureat-francofon.html">Bacalaureat francofon</a></li>
+      <li><a href="transferuri.html">Transferuri</a></li>
+      </ul>
+    </li>
+            <li class="mm-has-sub">
+        <a href="activitati-dotari.html" tabindex="0">Activități și Dotări <span class="mm-caret">▾</span></a>
+        <ul class="mm-sub">
+          <li><div class="mm-mega-title">Activități</div></li>
+          <li><a href="proiecte-educationale.html">Proiecte educaționale</a></li>
+          <li><a href="scoala-altfel.html">Școala Altfel</a></li>
+          <li><a href="concursuri-scolare.html">Concursuri școlare</a></li>
+          <li><a href="cluburi-asociatii.html">Cluburi și Asociații</a></li>
+          <li><a href="publicatii.html">Publicații</a></li>
+          <li><div class="mm-mega-title">Dotări</div></li>
+          <li><a href="bazin-semiolimpic.html">Bazin Semiolimpic</a></li>
+          <li><a href="biblioteca-mihail-strajan.html">Biblioteca Mihail Strajan</a></li>
+          <li><a href="cabinete-specializate.html">Cabinete specializate</a></li>
+          <li><a href="muzeul-colegiului.html">Muzeul Colegiului</a></li>
+          <li><a href="baza-sportiva.html">Bază sportivă</a></li>
+          <li><a href="sala-festivitati.html">Sală festivități</a></li>
+          <li><a href="colectii-inedite.html">Colecții inedite</a></li>
+        </ul>
+      </li>
+      <li><a href="stiri.html">Știri</a></li>
+      <li><a href="secretariat.html">Secretariat</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ── HERO ────────────────────────────────────────────────────── -->
+<section class="hero">
+  <p class="hero-eyebrow">Colegiul Național Carol I · Craiova</p>
+  <h1>Program <em>Bicentenar</em><br>1826–2026</h1>
+  <p class="hero-sub">Martie — Iunie 2026</p>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="num">23</span>
+      <span class="lbl">Evenimente</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">3</span>
+      <span class="lbl">Luni</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">200</span>
+      <span class="lbl">Ani de tradiție</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">7</span>
+      <span class="lbl">Locații</span>
+    </div>
+  </div>
+
+  <div class="hero-line"></div>
+</section>
+
+<!-- ── FEATURED EVENTS ─────────────────────────────────────────── -->
+<section class="featured">
+  <div class="featured-sym"><img src="data:image/png;base64,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" alt="Simbolul bicentenarului" class="featured-sym-img"/></div>
+  <span class="section-label">Momente de referință</span>
+  <h2 class="section-heading">Evenimente de neratat</h2>
+
+  <div class="featured-grid">
+
+    <!-- ── LARGE CARD (left) ── -->
+    <div class="feat-card large">
+      <div class="poster poster-art-gala">
+        <img src="/images/bicentenar/1.png">
+        <div class="poster-content">
+          <span class="poster-date-chip">20 Mai 2026</span>
+          <p class="poster-title">Gala Bicentenarului</p>
+        </div>
+      </div>
+      <div class="feat-body">
+        <div class="feat-cat" style="color:var(--cat-cultural)">Eveniment Cultural</div>
+        <h4>Gala Bicentenarului</h4>
+        <div class="feat-meta">
+          <strong>Locație:</strong> Teatrul Național „Marin Sorescu" Craiova<br>
+          <strong>Data:</strong> 20 mai 2026<br><br>
+          Spectacol omagial în cinstea celor 200 de ani de excelență academică.
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 6 SMALL CARDS (right, 2 col × 3 rows) ── -->
+    <div class="featured-right">
+
+      <!-- 1 -->
+      <div class="feat-card small">
+        <div class="poster poster-art-vernisaj">
+          <img src="/images/bicentenar/2-1.png">
+          <div class="poster-content">
+            <span class="poster-date-chip">20 Mar
+              2026</span>
+            <p class="poster-title">Artă & Patrimoniu</p>
+          </div>
+        </div>
+        <div class="feat-body">
+          <div class="feat-cat" style="color:var(--cat-art)">Artă & Cultură</div>
+          <h4>Vernisaj — 200 ani. Artă și Patrimoniu</h4>
+          <div class="feat-meta"><strong>Locație:</strong> Muzeul de Artă Craiova<br>Ora 17:00 · 21.03 – 25.05.2026</div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="feat-card small">
+        <div class="poster poster-art-spectacol">
+          <img src="/images/bicentenar/3-1.png">
+          <div class="poster-content">
+            <span class="poster-date-chip">8 Mai 2026</span>
+            <p class="poster-title">Libertate prin Educație</p>
+          </div>
+        </div>
+        <div class="feat-body">
+          <div class="feat-cat" style="color:var(--cat-cultural)">Spectacol</div>
+          <h4>Spectacol aniversar „Libertate prin educație"</h4>
+          <div class="feat-meta"><strong>Locație:</strong> Aula Buia<br>Ora: 17:00</div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="feat-card small">
+        <div class="poster poster-art-absolvire">
+          <img src="/images/bicentenar/2-2.png">
+          <div class="poster-content">
+            <span class="poster-date-chip">25 Mai 2026</span>
+            <p class="poster-title">Generația Bicentenar</p>
+          </div>
+        </div>
+        <div class="feat-body">
+          <div class="feat-cat" style="color:var(--cat-social)">Festivitate</div>
+          <h4>Festivitatea de absolvire — Generația Bicentenar</h4>
+          <div class="feat-meta"><strong>Locație:</strong> Parcul „Nicolae Romanescu"</div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="feat-card small">
+        <div class="poster" style="background:linear-gradient(135deg,#b8902a 0%,#7a5c18 100%);">
+          <a href="https://titeica.cnc.ro"><img src="/images/bicentenar/3-2.png"></a>
+          <div class="poster-content">
+            <span class="poster-date-chip">21 Mar 2026</span>
+            <p class="poster-title">Concursul Țițeica</p>
+          </div>
+        </div>
+        <div class="feat-body">
+          <div class="feat-cat" style="color:var(--cat-acad)">Academic</div>
+          <h4>Concursul Național de Matematică „Gheorghe Țițeica"</h4>
+          <div class="feat-meta"><strong>Locație:</strong> Colegiul Național Carol I</div>
+        </div>
+      </div>
+
+    </div><!-- /featured-right -->
+  </div>
+</section>
+
+<!-- ── MONTH NAV + LEGEND ──────────────────────────────────────── -->
+<nav class="month-nav" id="month-nav">
+  <a class="month-tab active" href="#martie" onclick="setTab(this)">
+    Martie <span class="count">6</span>
+  </a>
+  <a class="month-tab" href="#mai" onclick="setTab(this)">
+    Mai <span class="count">17</span>
+  </a>
+</nav>
+
+<div class="legend">
+  <span class="legend-label">Categorii:</span>
+  <span class="legend-item"><span class="legend-dot" style="background:var(--cat-art)"></span>Artă & Cultură</span>
+  <span class="legend-item"><span class="legend-dot" style="background:var(--cat-acad)"></span>Academic</span>
+  <span class="legend-item"><span class="legend-dot" style="background:var(--cat-sport)"></span>Sport</span>
+  <span class="legend-item"><span class="legend-dot" style="background:var(--cat-cultural)"></span>Cultural</span>
+  <span class="legend-item"><span class="legend-dot" style="background:var(--cat-social)"></span>Social</span>
+</div>
+
+<!-- ── TIMELINE ──────────────────────────────────────────────────── -->
+<section class="timeline-section">
+
+  <!-- ★ MARTIE ★ -->
+  <div class="month-block" id="martie">
+    <h2 class="month-title"><span>Martie</span></h2>
+    <div class="tl">
+
+      <div class="tl-item left">
+        <div class="tl-card">
+          <div class="tl-box">
+            <div class="tl-date">20 Martie 2026 <span class="tl-time">11:00</span></div>
+            <div class="tl-title">Plantarea Platanului Bicentenarului</div>
+            <div class="tl-location">Curtea Colegiului Național Carol I</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-social)"></span>Social</span>
+          </div>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <div class="tl-item right">
+        <div class="tl-empty"></div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-card">
+          <div class="tl-box">
+            <div class="tl-date">20 Martie 2026 <span class="tl-time">13:00</span></div>
+            <div class="tl-title">Festivitatea de deschidere — Concursul Național de Matematică „Țițeica"</div>
+            <div class="tl-location">Amfiteatrul ISJ Dolj</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-acad)"></span>Academic</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item left">
+        <div class="tl-card">
+          <div class="tl-box featured-item">
+            <div class="featured-badge">★ Eveniment de referință</div>
+            <div class="tl-date">20 Martie 2026 <span class="tl-time">17:00</span></div>
+            <div class="tl-title">Vernisaj Expoziție „Colegiul Național Carol I — 200 ani. Artă și Patrimoniu"</div>
+            <div class="tl-location">Muzeul de Artă Craiova</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-art)"></span>Artă & Cultură</span>
+          </div>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <div class="tl-item right">
+        <div class="tl-empty"></div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-card">
+          <div class="tl-box">
+            <div class="tl-date">21 Martie 2026 <span class="tl-time">09:00</span></div>
+            <div class="tl-title">Deschiderea expoziției pentru public</div>
+            <div class="tl-location">Muzeul de Artă Craiova</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-art)"></span>Artă & Cultură</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item left">
+        <div class="tl-card">
+          <div class="tl-box">
+            <div class="tl-date">21 Martie 2026 <span class="tl-time">10:00</span></div>
+            <div class="tl-title">Concursul „Țițeica"</div>
+            <div class="tl-location">Colegiul Național „Carol I"</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-acad)"></span>Academic</span>
+          </div>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <div class="tl-item right">
+        <div class="tl-empty"></div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-card">
+          <div class="tl-box">
+            <div class="tl-date">28 Martie 2026</div>
+            <div class="tl-title">Concurs Limbă Română — „Popas printre cuvinte"</div>
+            <div class="tl-location">Colegiul Național „Carol I"</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-acad)"></span>Academic</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /tl -->
+  </div><!-- /martie -->
+
+  <!-- ★ MAI ★ -->
+  <div class="month-block" id="mai">
+    <h2 class="month-title"><span>Mai</span></h2>
+    <div class="tl">
+
+      <div class="tl-item left">
+        <div class="tl-card">
+          <div class="tl-box">
+            <div class="tl-date">6 Mai 2026</div>
+            <div class="tl-title">Eveniment Erasmus — „Educație fără frontiere, generații europene"</div>
+            <div class="tl-location">Colegiul Național „Carol I"</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-social)"></span>Social</span>
+          </div>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <div class="tl-item right">
+        <div class="tl-empty"></div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-card">
+          <div class="tl-box">
+            <div class="tl-date">7 Mai 2026</div>
+            <div class="tl-title">Simpozion — Prezentare Monografie</div>
+            <div class="tl-location">Colegiul Național „Carol I"</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-acad)"></span>Academic</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item left">
+        <div class="tl-card">
+          <div class="tl-box featured-item">
+            <div class="featured-badge">★ Eveniment de referință</div>
+            <div class="tl-date">8 Mai 2026 <span class="tl-time">17:00</span></div>
+            <div class="tl-title">Spectacol aniversar „Libertate prin educație"</div>
+            <div class="tl-location">Aula Buia</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-cultural)"></span>Cultural</span>
+          </div>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <div class="tl-item right">
+        <div class="tl-empty"></div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-card">
+          <div class="tl-box">
+            <div class="tl-date">8 Mai 2026</div>
+            <div class="tl-title">Competiție Înot — „Cel mai bun înotător"</div>
+            <div class="tl-location">Bazin de înot</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-sport)"></span>Sport</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item left">
+        <div class="tl-card">
+          <div class="tl-box">
+            <div class="tl-date">9 Mai 2026</div>
+            <div class="tl-title">Cros Bicentenar — „Mens Sana in Corpore Sano"</div>
+            <div class="tl-location">Parcul Tineretului, Craiova</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-sport)"></span>Sport</span>
+          </div>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <div class="tl-item right">
+        <div class="tl-empty"></div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-card">
+          <div class="tl-box">
+            <div class="tl-date">11 Mai 2026 <span class="tl-time">13:00</span></div>
+            <div class="tl-title">Spectacol artistic al elevilor și absolvenților — eveniment festiv de închidere</div>
+            <div class="tl-location">Colegiul Național „Carol I"</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-cultural)"></span>Cultural</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item left">
+        <div class="tl-card">
+          <div class="tl-box">
+            <div class="tl-date">11 Mai 2026 <span class="tl-time">17:30</span></div>
+            <div class="tl-title">Fotbal Profesori — Absolvenți C.N. Carol I</div>
+            <div class="tl-location">Terenul de sport al colegiului</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-sport)"></span>Sport</span>
+          </div>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <div class="tl-item right">
+        <div class="tl-empty"></div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-card">
+          <div class="tl-box">
+            <div class="tl-date">11 – 15 Mai 2026</div>
+            <div class="tl-title">Competiții Sportive Interne Bicentenar</div>
+            <div class="tl-location">Colegiul Național „Carol I"</div>
+            <div class="tl-span">Fotbal · Volei · Baschet · Badminton · Șah · Tenis de masă</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-sport)"></span>Sport</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item left">
+        <div class="tl-card">
+          <div class="tl-box">
+            <div class="tl-date">14 Mai 2026</div>
+            <div class="tl-title">Lansare Publicații</div>
+            <div class="tl-location">Colegiul Național „Carol I"</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-acad)"></span>Academic</span>
+          </div>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <div class="tl-item right">
+        <div class="tl-empty"></div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-card">
+          <div class="tl-box">
+            <div class="tl-date">15 Mai 2026 <span class="tl-time">13:00</span></div>
+            <div class="tl-title">Premiere Sportivi — Performanțe Județene, Naționale și Internaționale</div>
+            <div class="tl-location">Colegiul Național „Carol I"</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-sport)"></span>Sport</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item left">
+        <div class="tl-card">
+          <div class="tl-box featured-item">
+            <div class="featured-badge">★ Eveniment de referință</div>
+            <div class="tl-date">15 Mai 2026</div>
+            <div class="tl-title">Vernisaj Expoziție „Colegiul Național «Carol I» — o istorie bicentenară"</div>
+            <div class="tl-location">Muzeul Olteniei, Craiova</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-art)"></span>Artă & Cultură</span>
+          </div>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <div class="tl-item right">
+        <div class="tl-empty"></div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-card">
+          <div class="tl-box">
+            <div class="tl-date">16 Mai 2026 <span class="tl-time">10:00</span></div>
+            <div class="tl-title">Concursul „Ion Ciolac"</div>
+            <div class="tl-location">Colegiul Național „Carol I"</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-acad)"></span>Academic</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item left">
+        <div class="tl-card">
+          <div class="tl-box">
+            <div class="tl-date">18 Mai 2026</div>
+            <div class="tl-title">Festivitatea de premiere — Concursul Național „Țițeica"</div>
+            <div class="tl-location">Colegiul Național „Carol I"</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-acad)"></span>Academic</span>
+          </div>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <div class="tl-item right">
+        <div class="tl-empty"></div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-card">
+          <div class="tl-box">
+            <div class="tl-date">20 Mai 2026</div>
+            <div class="tl-title">Premiere Olimpici — Rezultate Naționale și Internaționale</div>
+            <div class="tl-location">Colegiul Național „Carol I"</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-acad)"></span>Academic</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item left">
+        <div class="tl-card">
+          <div class="tl-box featured-item">
+            <div class="featured-badge">★ Eveniment de referință</div>
+            <div class="tl-date">20 Mai 2026</div>
+            <div class="tl-title">Gala Bicentenarului</div>
+            <div class="tl-location">Teatrul Național „Marin Sorescu", Craiova</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-cultural)"></span>Cultural</span>
+          </div>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-empty"></div>
+      </div>
+
+      <div class="tl-item right">
+        <div class="tl-empty"></div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div><div class="tl-dot-line"></div></div>
+        <div class="tl-card">
+          <div class="tl-box">
+            <div class="tl-date">23 Mai 2026</div>
+            <div class="tl-title">Concurs Limba Engleză "Queen Victoria"</div>
+            <div class="tl-location">Colegiul Național „Carol I"</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-acad)"></span>Academic</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item left">
+        <div class="tl-card">
+          <div class="tl-box featured-item">
+            <div class="featured-badge">★ Eveniment de referință</div>
+            <div class="tl-date">25 Mai 2026</div>
+            <div class="tl-title">Festivitatea de absolvire — Generația Bicentenar</div>
+            <div class="tl-location">Parcul „Nicolae Romanescu", Craiova</div>
+            <span class="tl-cat-tag"><span class="dot" style="background:var(--cat-social)"></span>Social</span>
+          </div>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-empty"></div>
+      </div>
+
+    </div><!-- /tl -->
+  </div><!-- /mai -->
+
+</section>
+
+<!-- ── CTA BANNER ──────────────────────────────────────────────── -->
+<section class="cta-banner">
+  <h2>Două sute de ani de educație, cultură și performanță</h2>
+  <p>Alătură-te comunității Colegiului Național „Carol I" și fii parte din istoria vie a bicentenarului.</p>
+  <a href="index.html" class="cta-btn">Înapoi la pagina principală</a>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-name">Colegiul Național Carol I</div>
+      <div class="footer-tagline">Fondat în 1826 · Craiova, România</div>
+      <div class="footer-contact">
+        <span>Str. Ioan Maiorescu nr. 2</span>
+        <span>200418, Dolj</span>
+        <span>Tel: 0251 413 230</span>
+        <span><a href="mailto:office@cnc.ro">office@cnc.ro</a></span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Colegiu</div>
+      <a href="despre-istoric.html">Istoric și tradiție</a>
+      <a href="conducere.html">Echipa de conducere</a>
+      <a href="consiliu-administratie.html">Consiliul de administrație</a>
+      <a href="consiliu-profesoral.html">Consiliul profesoral</a>
+      <a href="oferta-educationala.html">Ofertă educațională</a>
+      <a href="comisii.html">Comisii</a>
+      <a href="consiliu-elevi.html">Consiliul elevilor</a>
+      <a href="interes-public.html">Informații de interes public</a>
+      <a href="regulamente.html">Legislații</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Navigare</div>
+      <a href="index.html">Acasă</a>
+      <a href="admitere-examene.html">Admitere și examene</a>
+      <a href="activitati-dotari.html">Activități și Dotări</a>
+      <a href="stiri.html">Știri</a>
+      <a href="secretariat.html">Secretariat</a>
+      <a href="program-bicentenar.html">Program Bicentenar 2026</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title"><a href="program-bicentenar.html">Bicentenar 1826–2026</a></div>
+      <a href="program-bicentenar.html">Program aniversar</a>
+      <a href="despre-istoric.html">Istoria colegiului</a>
+      <div class="footer-copy">© 2026 Colegiul Național Carol I Craiova. Toate drepturile rezervate.</div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var burger = document.getElementById('navBurger');
+  var menu   = document.getElementById('mobileMenu');
+  if (!burger || !menu) return;
+
+  burger.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  // close on outside click / scroll
+  document.addEventListener('click', function(e){
+    if (!menu.contains(e.target) && !burger.contains(e.target) && menu.classList.contains('open')){
+      menu.classList.remove('open');
+      burger.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // sub-menu toggle
+  document.querySelectorAll('.mm-has-sub > a').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var li = a.parentElement;
+      li.classList.toggle('open');
+    });
+  });
+})();
+</script>
+<script>
+(function() {
+  const svg   = document.getElementById('logoSvg');
+  const grad  = document.getElementById('logo-shimmer');
+
+  // Gradient band vector: diagonal ~35deg, half-length = 55 viewBox units
+  // At any center (cx, cy), we set:
+  //   x1 = cx - dx, y1 = cy - dy
+  //   x2 = cx + dx, y2 = cy + dy
+  const VB_W = 216.86, VB_H = 34.36;
+
+  // Current animated center
+  let cx = -120, cy = 200; // off-screen start
+  let tcx = cx, tcy = cy;
+  let glowOpacity = 0, targetGlow = 0;
+  let isHovering = false;
+  let raf = null;
+
+  const goldIds = ['ga','gb','gc','gd','ge'];
+  // Base gold colors at full glow
+  const goldColors = ['#0f385a','#c9860a','#ffd000','#c9860a','#0f385a'];
+  // At glow=0 all are navy; at glow=1 they are gold
+  function lerpColor(t) {
+    // lerp each gold stop between navy and its target color
+    // use opacity trick via the stop-color only — no stop-opacity
+    // actually simplest: just setAttribute on stop-color won't interpolate easily
+    // Instead: just set gradient x1/y1/x2/y2, glow controls stop offsets tightening
+    // Simplest correct approach: one stop-opacity on a wrapper
+  }
+
+  function mix(hex, t) {
+    const navy = [15, 56, 90];
+    const r  = parseInt(hex.slice(1,3),16);
+    const gv = parseInt(hex.slice(3,5),16);
+    const b  = parseInt(hex.slice(5,7),16);
+    const nr = Math.round(navy[0] + (r  - navy[0]) * t);
+    const ng = Math.round(navy[1] + (gv - navy[1]) * t);
+    const nb = Math.round(navy[2] + (b  - navy[2]) * t);
+    return '#' + [nr,ng,nb].map(v=>v.toString(16).padStart(2,'0')).join('');
+  }
+
+  function applyGrad() {
+    const g = glowOpacity;
+    // Move radial gradient center to cursor
+    grad.setAttribute('cx', cx.toFixed(2));
+    grad.setAttribute('cy', cy.toFixed(2));
+    grad.setAttribute('fx', cx.toFixed(2));
+    grad.setAttribute('fy', cy.toFixed(2));
+
+    // Center: bright gold → mid: amber → outer: navy
+    document.getElementById('gc').setAttribute('stop-color', mix('#ffd000', g));
+    document.getElementById('gb').setAttribute('stop-color', mix('#c9860a', g));
+    document.getElementById('ga').setAttribute('stop-color', mix('#2a4e6a', g));
+  }
+
+  function lerp(a,b,t){ return a+(b-a)*t; }
+
+  function tick() {
+    const posEase  = isHovering ? 0.1 : 0.04;
+    const glowEase = isHovering ? 0.07 : 0.04;
+
+    cx = lerp(cx, tcx, posEase);
+    cy = lerp(cy, tcy, posEase);
+    glowOpacity = lerp(glowOpacity, targetGlow, glowEase);
+
+    applyGrad();
+
+    const stillMoving = Math.abs(cx-tcx)>0.05 || Math.abs(cy-tcy)>0.05
+                     || Math.abs(glowOpacity-targetGlow)>0.002;
+    if (stillMoving) raf = requestAnimationFrame(tick);
+    else raf = null;
+  }
+
+  function startTick() { if (!raf) raf = requestAnimationFrame(tick); }
+
+  // Mouse tracking
+  svg.addEventListener('mousemove', function(e) {
+    const rect = svg.getBoundingClientRect();
+    tcx = ((e.clientX - rect.left)  / rect.width)  * VB_W;
+    tcy = ((e.clientY - rect.top)   / rect.height) * VB_H;
+    targetGlow = 1;
+    isHovering = true;
+    startTick();
+  });
+
+  svg.addEventListener('mouseleave', function() {
+    targetGlow = 0;
+    isHovering = false;
+    startTick();
+  });
+
+  // Auto sweep on load: diagonal from bottom-left to top-right
+  (function autoSweep() {
+    const DUR = 7500;
+    const DELAY = 600;
+    let startTime = null;
+
+    function sweep(now) {
+      if (isHovering) return; // user took over
+      if (!startTime) startTime = now;
+      const elapsed = now - startTime - DELAY;
+      if (elapsed < 0) { requestAnimationFrame(sweep); return; }
+      const t = Math.min(elapsed / DUR, 1);
+      // Bell opacity
+      const op = Math.sin(Math.PI * t);
+      // Position: bottom-left off-screen → top-right off-screen
+      const px = -30  + t * (VB_W + 60);
+      const py = VB_H * 0.5;
+      cx = px; cy = py;
+      tcx = px; tcy = py;
+      glowOpacity = op;
+      targetGlow = op;
+      applyGrad();
+      if (t < 1) requestAnimationFrame(sweep);
+    }
+    requestAnimationFrame(sweep);
+  })();
+
+})();
+</script>
+</body>
+</html>
